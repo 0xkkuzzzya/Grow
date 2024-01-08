@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import '@typehaus/metropolis/bold.css'
 
 const TokenBalanceBlock = styled.div`
     max-width: 100%;
@@ -12,6 +13,7 @@ const TokenBalanceBlock = styled.div`
 const TokenBalance = styled.a`
     font-weight: 700;
     font-size: 19px;
+    font-family: 'Metropolis', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
 `
 
 const TokenBalanceUSQ = styled.a`
@@ -28,7 +30,7 @@ export let BalancegUSQ = <TokenBalanceBlock>
         
 
 export let BalanceATOM =  <TokenBalanceBlock>
-                <TokenBalance>0.00 ATOM</TokenBalance>
+                <TokenBalance>15 ATOM</TokenBalance>
                 <TokenBalanceUSQ>0.00 USQ</TokenBalanceUSQ>
             </TokenBalanceBlock>
        

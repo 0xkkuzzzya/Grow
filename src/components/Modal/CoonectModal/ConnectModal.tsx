@@ -44,7 +44,7 @@ const OpenButton = styled.button`
     font-family: 'Metropolis', sans-serif;
     font-size: 17px;
     font-weight: 600;
-    padding: 7px 20px;
+    padding: 8px 20px;
     white-space: nowrap;
     margin-left: auto;
     @media (max-width: 500px) {
@@ -110,7 +110,7 @@ export const ConnectModal = () => {
     return (
       <div>
         <OpenButton onClick={open}>
-           Connect Wallets
+           Connect Wallet
             </OpenButton>
         <StyledDialogOvelay isOpen={walletModalStatus.b}  onDismiss={close}>
             <StyledDialogContent>

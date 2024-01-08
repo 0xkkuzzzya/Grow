@@ -8,7 +8,7 @@ const LinkBLock = styled(LinkText)`
     text-decoration: none;
     font-weight: 700;
     outline: none;
-    font-size: 20px;
+    font-size: 15px;
     padding: 10px 20px;
     @media (max-width: 930px) {
         font-size: 17px;

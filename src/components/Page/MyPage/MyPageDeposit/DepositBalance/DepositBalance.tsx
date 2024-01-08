@@ -6,7 +6,7 @@ const BalanceBlock = styled.div`
 `
 
 const BalanceInfoText = styled.a`
-    font-size: 40px;
+    font-size: 36px;
     font-weight: 700;
 `
 

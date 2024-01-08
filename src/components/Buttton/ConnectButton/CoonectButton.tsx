@@ -7,7 +7,7 @@ const ButtonConnect = styled.div`
     background: linear-gradient(to right, #77bff9, #2d96ff);
     color: black;
     font-family: 'Metropolis', sans-serif;
-    border-radius:10px;
+    border-radius:15px;
     border:none;
     margin-right: 50px;
     cursor: pointer;

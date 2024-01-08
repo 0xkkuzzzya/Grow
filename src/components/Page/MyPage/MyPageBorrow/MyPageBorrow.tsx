@@ -4,8 +4,8 @@ import { BorrowBalance } from "./BorrowBalance.tsx/BorrowBalance";
 import { BorrowTokenInfo } from "./BorrowTokenInfo/BorrowTokenInfo";
 
 const BorrowBlock = styled.div`
-    width: 350px;
-    height: 300px;
+    width: 400px;
+    height: 280px;
     border: 3px solid #EEEEEE;
     margin-top: 20px;
     border-radius: 10px;

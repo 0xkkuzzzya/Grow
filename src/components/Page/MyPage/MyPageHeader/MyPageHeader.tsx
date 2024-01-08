@@ -5,7 +5,7 @@ const MyHeader = styled.div`
 `
 
 const HeaderText = styled.h1`
-    
+    font-size: 30px;
 `
 
 

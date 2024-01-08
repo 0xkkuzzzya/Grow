@@ -4,7 +4,7 @@ import { BalanceInfoBlock } from "./BalanceInfoBlock/BalanceInfoBlock";
 import { TokenInfo } from "./TokenInfo/TokenInfo";
 
 const BalanceBlock = styled.div`
-    width: 400px;
+    width: 425px;
     max-height: 100%;
     border: 3px solid #EEEEEE;
     border-radius: 10px;

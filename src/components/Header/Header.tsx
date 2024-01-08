@@ -20,8 +20,8 @@ const HeaderLogoBlock = styled.div`
 
 const HeaderLogoQUBE = styled.img`
     display: block;
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
     margin-left: 50px;
     @media (max-width: 500px) {
         width: 40px;
