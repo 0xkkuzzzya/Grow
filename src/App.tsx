@@ -7,6 +7,7 @@ import { Liquidation } from './components/Page/Liquidation/Liquidation';
 import { MyPage } from './components/Page/MyPage/MyPage';
 
 import { Routes, Route } from 'react-router-dom';
+import { HomePage } from './components/Page/HomePage/HomePage';
 
 
 const AppPage = styled.div`
@@ -21,6 +22,7 @@ function App() {
     <AppPage>
       <Header/>
       <Routes>
+        <Route path="/HomePage" element={<HomePage/>}/>
         <Route path="/MyPage" element={<MyPage/>}/>
         <Route path="/Borrow" element={<Borrow/>}/>
         <Route path="/Earn" element={<Earn/>}/>

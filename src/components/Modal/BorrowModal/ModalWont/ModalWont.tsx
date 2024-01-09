@@ -131,7 +131,7 @@ export const ModalWont = () => {
         
         <OpenButton onClick={open}>
         <Logo src={CosmosLogo}></Logo>
-           QUBE
+           ATOM
         <Arrow src={ArrowBlack}></Arrow>
             </OpenButton>
         <StyledDialogOvelay isOpen={walletModalStatus.b}  onDismiss={close}>

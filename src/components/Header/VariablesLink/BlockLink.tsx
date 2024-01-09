@@ -10,13 +10,9 @@ const BlockLink = styled.nav`
     align-items: center;
     gap: 80px;
     height: 60px;
-    margin-top: 10px;
     justify-content: center;
     margin-right: 30px;
-    margin-left: 10em;
-    @media (max-width: 1000px) {
-        margin-left: 8em;
-    }
+    margin-left: 50px;
 `
 
 const NavBlock = styled.div`
@@ -45,8 +41,8 @@ const MobLinkBlock = styled.div`
 `
 
 const MobBlockLink = styled.nav <{height: string, padding: string}>`
-    width: 100%;
-    margin-left: 110px;
+    width: 102%;
+    margin-left: 60px;
     margin-top: 15px;
     padding-top: 10px;
     max-height: ${props => props.height};
@@ -58,6 +54,9 @@ const MobBlockLink = styled.nav <{height: string, padding: string}>`
     transition: max-height .3s ease-in-out;
     background: #ECEBEB;
     padding-bottom: ${props => props.padding};
+    @media (min-width: 500px) {
+        margin-left: 70px;
+    }
 `
 
 const LinkMobBlock = styled.div`

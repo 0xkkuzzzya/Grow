@@ -1,7 +1,10 @@
-import styled from "styled-components";
 import { DialogContent, DialogOverlay } from '@reach/dialog';
+import styled from 'styled-components';
 import { animated } from '@react-spring/web';
-import { useShowWalletModal } from "../../../hooks/useStoreModal";
+import { ConnectWallets } from '../../Wallets/ConnetsWallets/ConnectWallets';
+import { useConnectKeplrWalletStore } from '../../../hooks/useConnectKeplrWalletStore';
+import { useWallet } from '../../../hooks/useWallet';
+import { useShowWalletModal } from '../../../hooks/useShowModal';
 
 const ModalDialogOverlay = animated(DialogOverlay);
 const StyledDialogOvelay = styled(ModalDialogOverlay) `
@@ -75,6 +78,11 @@ const ContentDiv = styled.div`
         }
 `
 
+const WalletList = styled.div`
+    width: 100%;
+    height: 100%;
+`
+
 
 const ModalDialogContent = animated(DialogContent);
 const StyledDialogContent = styled(ModalDialogContent)`
@@ -102,24 +110,49 @@ const StyledDialogContent = styled(ModalDialogContent)`
 
 export const ConnectModal = () => {
 
-    const [ walletModalStatus, setWalletModalStatus ] = useShowWalletModal();
-
     const open = () => {setWalletModalStatus({b: true})};
     const close = () => {setWalletModalStatus({b: false})};
 
+
+    let walletAddr: string = "";
+
+    const [ connectWallet, setConnectKeplrWalletStore ] = useConnectKeplrWalletStore();
+    const [ wallet, setWallet ] = useWallet();
+    const [ walletModalStatus, setWalletModalStatus] = useShowWalletModal();
+
+    const disconnect = () => {
+        setWallet({
+            init: false,
+            wallet: null,
+            type: ""
+        });
+        setConnectKeplrWalletStore({
+            connected: false
+        })
+        close()
+    }
+
+    if(wallet.type == "keplr") {
+        walletAddr =  'qube...' + String(wallet.wallet.bech32Address).slice(36,43);
+    }
+
     return (
       <div>
-        <OpenButton onClick={open}>
-           Connect Wallet
-            </OpenButton>
-        <StyledDialogOvelay isOpen={walletModalStatus.b}  onDismiss={close}>
+        <OpenButton onClick={wallet.init == false? open : disconnect}>
+            {walletAddr == "" || undefined ? "Connect Wallet" : walletAddr}
+        </OpenButton>
+        <StyledDialogOvelay isOpen={walletModalStatus.b && !connectWallet.connected} onDismiss={close}>
             <StyledDialogContent>
                 <CloseDiv>              
                     <CloseButton onClick={close}>
                     <span aria-hidden>×</span>
                     </CloseButton>
                 </CloseDiv>
-                <ContentDiv></ContentDiv>
+                <ContentDiv>
+                    <WalletList>
+                        <ConnectWallets></ConnectWallets>
+                    </WalletList>
+                </ContentDiv>
             </StyledDialogContent>
         </StyledDialogOvelay>
       </div>

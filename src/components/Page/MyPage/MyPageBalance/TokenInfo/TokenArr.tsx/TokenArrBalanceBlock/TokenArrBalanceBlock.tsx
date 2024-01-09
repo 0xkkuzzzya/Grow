@@ -27,6 +27,12 @@ export let BalancegUSQ = <TokenBalanceBlock>
                 <TokenBalance>0.00 gUSQ</TokenBalance>
                 <TokenBalanceUSQ>0.00 USQ</TokenBalanceUSQ>
             </TokenBalanceBlock>
+
+
+export let BalanceUSQ =  <TokenBalanceBlock>
+                <TokenBalance>0 USQ</TokenBalance>
+                <TokenBalanceUSQ>0.00 USQ</TokenBalanceUSQ>
+            </TokenBalanceBlock>
         
 
 export let BalanceATOM =  <TokenBalanceBlock>
