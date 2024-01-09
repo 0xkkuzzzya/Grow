@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import GUSQ from '../../../../../../assets/svg/GUSQLogo.svg'
 import ATOMLogo from '../../../../../../assets/svg/CosmosLogo.svg'
-import { BalanceATOM, BalancegUSQ } from "./TokenArrBalanceBlock/TokenArrBalanceBlock";
+import USQLogo from '../../../../../../assets/svg/USQLogo.svg'
+import { BalanceATOM, BalanceUSQ, BalancegUSQ } from "./TokenArrBalanceBlock/TokenArrBalanceBlock";
 
 const TokenBlock = styled.div`
     
@@ -64,6 +65,22 @@ export const BalanceATOMToken = () => {
                 </TokenImgBlock>
                 <TokenBalanceBlock>
                     {BalanceATOM}
+                </TokenBalanceBlock>
+            </Token>
+        </TokenBlock>
+    )
+}
+
+export const BalanceUSQToken = () => {
+    return(
+        <TokenBlock>
+            <Token>
+                <TokenImgBlock>
+                    <TokenImg src={USQLogo}></TokenImg>
+                    <TokenImgText>USQ</TokenImgText>
+                </TokenImgBlock>
+                <TokenBalanceBlock>
+                    {BalanceUSQ}
                 </TokenBalanceBlock>
             </Token>
         </TokenBlock>

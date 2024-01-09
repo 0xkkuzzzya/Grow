@@ -26,7 +26,7 @@ const HeaderLogoQUBE = styled.img`
     @media (max-width: 500px) {
         width: 40px;
         height: 40px;
-        margin-left: 20px;
+        margin-left: 10px;
     }
 `
 
@@ -57,22 +57,6 @@ const Test = styled.div`
     }
 `
 
-const HeaderNav = styled.nav`
-    max-width: 100%;
-    text-decoration: none;
-    display: flex;
-    gap: 100px;
-    margin: 0 auto;
-    justify-content: center;
-    @media (max-width: 930px) {
-        gap: 50px;
-    }
-    @media (max-width: 730px) {
-        position: absolute;
-        margin-top: 80px;
-    }
-
-`
 
 export const Header = () => {
     const isDes = useMediaQuery({
@@ -85,7 +69,9 @@ export const Header = () => {
     return(
         <MainHeader>
             <HeaderLogoBlock>
+                <Castomlink to="/HomePage">
                     <HeaderLogoQUBE src={QubeLogo}></HeaderLogoQUBE>
+                </Castomlink>
             </HeaderLogoBlock>
                 {isDes && <DefoultLinkBlock/>}
                 {isMob && <MobileLinkBlock/>}

@@ -131,7 +131,7 @@ export const ModalColl = () => {
         
         <OpenButton onClick={open}>
         <Logo src={QubeLogo}></Logo>
-           ATOM
+           QUBE
         <Arrow src={ArrowBlack}></Arrow>
             </OpenButton>
         <StyledDialogOvelay isOpen={walletModalStatus.b}  onDismiss={close}>
