@@ -4,7 +4,6 @@ import { USQARP } from "./ARP/ARP";
 import MuiAccordion, { AccordionProps } from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import { makeStyles, withStyles } from "@material-ui/core/styles";
-import Fade from '@mui/material/Fade';
 
 
 const AccordionBlock = styled.div`
