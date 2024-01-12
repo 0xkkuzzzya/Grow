@@ -8,7 +8,7 @@ const BorrowBlock = styled.div`
     height: 280px;
     border: 3px solid #EEEEEE;
     margin-top: 20px;
-    border-radius: 10px;
+    border-radius: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;

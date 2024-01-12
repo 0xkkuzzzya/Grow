@@ -7,7 +7,7 @@ const BalanceBlock = styled.div`
     width: 425px;
     max-height: 100%;
     border: 3px solid #EEEEEE;
-    border-radius: 10px;
+    border-radius: 15px;
     margin-right: 20px;
     display: flex;
     flex-direction: column;

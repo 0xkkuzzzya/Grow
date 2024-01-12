@@ -71,16 +71,16 @@ export const DefoultLinkBlock = () => {
     return(
             <BlockLink>
                 <LinkBlock>
-                    <Castomlink to="/MyPage">My</Castomlink>
+                    <Castomlink to="/myPage">My</Castomlink>
                 </LinkBlock>
                 <LinkBlock>
-                    <Castomlink to="/Borrow">Borrow</Castomlink>
+                    <Castomlink to="/borrow">Borrow</Castomlink>
                 </LinkBlock>
                 <LinkBlock>
-                    <Castomlink to="/Earn">Earn</Castomlink>
+                    <Castomlink to="/earn">Earn</Castomlink>
                 </LinkBlock>
                 <LinkBlock>
-                    <Castomlink to="/Liquidation">Liquidation</Castomlink>
+                    <Castomlink to="/liquidation">Liquidation</Castomlink>
                 </LinkBlock>
                 
             </BlockLink>
@@ -97,16 +97,16 @@ export const MobileLinkBlock = () => {
            <NavBlock>
                 <MobBlockLink height={accordion.height} padding={accordion.padding}>
                     <MobLinkBlock>
-                        <Castomlink to="/MyPage">To</Castomlink>
+                        <Castomlink to="/mypage">My</Castomlink>
                     </MobLinkBlock>
                     <MobLinkBlock>
-                        <Castomlink to="/Borrow">Borrow</Castomlink>
+                        <Castomlink to="/borrow">Borrow</Castomlink>
                     </MobLinkBlock>
                     <MobLinkBlock>
-                        <Castomlink to="/Earn">Earn</Castomlink>
+                        <Castomlink to="/earn">Earn</Castomlink>
                     </MobLinkBlock>
                     <MobLinkBlock>
-                        <Castomlink to="/Liquidation">Liquidation</Castomlink>
+                        <Castomlink to="/liquidation">Liquidation</Castomlink>
                     </MobLinkBlock>
                 </MobBlockLink>
             </NavBlock>

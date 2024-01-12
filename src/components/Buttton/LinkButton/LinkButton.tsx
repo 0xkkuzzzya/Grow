@@ -36,7 +36,7 @@ export const LinkButton = () => {
             setAccordion({
                 active: true,
                 margin: '210px',
-                height: '200px',
+                height: '190px',
                 padding: '10px'
             })
         } else if (accordion.active == true) {

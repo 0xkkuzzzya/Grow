@@ -22,11 +22,11 @@ function App() {
     <AppPage>
       <Header/>
       <Routes>
-        <Route path="/HomePage" element={<HomePage/>}/>
-        <Route path="/MyPage" element={<MyPage/>}/>
-        <Route path="/Borrow" element={<Borrow/>}/>
-        <Route path="/Earn" element={<Earn/>}/>
-        <Route path="/Liquidation" element={<Liquidation/>}/>
+        <Route path="/homePage" element={<HomePage/>}/>
+        <Route path="/mypage" element={<MyPage/>}/>
+        <Route path="/borrow" element={<Borrow/>}/>
+        <Route path="/earn" element={<Earn/>}/>
+        <Route path="/liquidation" element={<Liquidation/>}/>
       </Routes>
     </AppPage>
     </>
