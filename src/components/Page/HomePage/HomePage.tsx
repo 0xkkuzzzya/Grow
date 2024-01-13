@@ -49,7 +49,7 @@ const GreyText = styled.h2`
 const ButtonBlock = styled.div`
     max-width: 100%;
     display: flex;
-    margin-top: 20px;
+    margin-top: 50px;
     margin-left: 20px;
     @media (max-width: 500px) {
         margin-right: 20px;

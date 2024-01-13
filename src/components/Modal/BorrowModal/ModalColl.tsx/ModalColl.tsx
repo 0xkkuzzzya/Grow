@@ -63,6 +63,7 @@ const OpenButton = styled.button`
     margin-left: 20px;
     display: flex;
     align-items: center;
+    color: black;
 `
 
 const ConnectText = styled.a`
