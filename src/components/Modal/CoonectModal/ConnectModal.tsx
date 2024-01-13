@@ -53,7 +53,7 @@ const OpenButton = styled.button`
     color: black;
     @media (max-width: 500px) {
         font-size: 15px;
-        padding: 9px 20px;
+        padding: 10px 20px;
     }
 `
 

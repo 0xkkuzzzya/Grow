@@ -17,6 +17,7 @@ const BorrowBlock = styled.div`
     }
     @media (max-width: 500px) {
         border: none;
+        margin-top: 0px;
     }
 `
 

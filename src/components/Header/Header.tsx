@@ -22,11 +22,9 @@ const HeaderLogoQUBE = styled.img`
     display: block;
     width: 55px;
     height: 55px;
-    margin-left: 50px;
     @media (max-width: 500px) {
         width: 40px;
         height: 40px;
-        margin-left: 10px;
     }
 `
 

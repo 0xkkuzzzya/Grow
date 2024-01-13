@@ -23,7 +23,8 @@ function App() {
     <AppPage>
       <Header/>
       <Routes>
-        <Route path="/homePage" element={<HomePage/>}/>
+        <Route path="/" element={<HomePage/>}/>
+        <Route path="/homepage" element={<HomePage/>}/>
         <Route path="/mypage" element={<MyPage/>}/>
         <Route path="/borrow" element={<Borrow/>}/>
         <Route path="/earn" element={<Earn/>}/>

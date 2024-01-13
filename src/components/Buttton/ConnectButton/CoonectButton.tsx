@@ -9,12 +9,15 @@ const ButtonConnect = styled.div`
     font-family: 'Metropolis', sans-serif;
     border-radius:15px;
     border:none;
-    margin-right: 50px;
+    margin-right: 20px;
     cursor: pointer;
     color: black;
     margin-left: auto;
     @media (max-width: 500px) {
         margin-right: 20px;
+    }
+    @media (min-width: 950px) {
+        margin-right: 50px;
     }
 `
 
