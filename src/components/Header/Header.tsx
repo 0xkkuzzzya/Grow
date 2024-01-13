@@ -26,6 +26,9 @@ const HeaderLogoQUBE = styled.img`
         width: 40px;
         height: 40px;
     }
+    @media (min-width: 950px) {
+        margin-left: 40px;
+    }
 `
 
 
