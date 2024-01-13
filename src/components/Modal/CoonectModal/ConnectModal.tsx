@@ -50,6 +50,7 @@ const OpenButton = styled.button`
     padding: 8px 20px;
     white-space: nowrap;
     margin-left: auto;
+    color: black;
     @media (max-width: 500px) {
         font-size: 15px;
         padding: 9px 20px;

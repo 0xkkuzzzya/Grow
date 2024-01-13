@@ -6,6 +6,7 @@ const HomePageBlock = styled.div`
     width: 100%;
     margin-top: 200px;
     padding-left: 70px;
+    padding-bottom: 30px;
     @media (max-width: 720px) {
         
         display: flex;

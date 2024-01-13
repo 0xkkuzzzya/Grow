@@ -3,7 +3,6 @@ import { DialogContent, DialogOverlay } from '@reach/dialog';
 import { animated } from '@react-spring/web';
 import { useShowWalletModal } from "../../../../hooks/useStoreModal";
 import CosmosLogo from '../../../../assets/svg/CosmosLogo.svg'
-import QubeLogo from '../../../../assets/svg/QubeLogo.svg'
 import ArrowBlack from '../../../../assets/svg/ArrowBlack.svg'
 
 const ModalDialogOverlay = animated(DialogOverlay);

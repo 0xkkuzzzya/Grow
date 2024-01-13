@@ -99,8 +99,8 @@ const ModalDialogContent = animated(DialogContent);
 const StyledDialogContent = styled(ModalDialogContent)`
     &[data-reach-dialog-content] {
         background-color: rgb(245,245,245);
-        width: 355px;
-        height: 350px;
+        width: 400px;
+        height: 500px;
         display: flex;
         flex-direction: column;
         border-radius: 20px;
@@ -111,6 +111,8 @@ const StyledDialogContent = styled(ModalDialogContent)`
         @media (max-width: 500px) {
             width: 335px;
             height: 600px;
+            margin-left: 10px;
+            margin-right: 10px;
         }
         @media (max-width: 330px) {
             width: 305px;

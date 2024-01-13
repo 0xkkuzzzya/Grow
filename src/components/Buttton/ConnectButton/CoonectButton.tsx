@@ -11,6 +11,7 @@ const ButtonConnect = styled.div`
     border:none;
     margin-right: 50px;
     cursor: pointer;
+    color: black;
     margin-left: auto;
     @media (max-width: 500px) {
         margin-right: 20px;
