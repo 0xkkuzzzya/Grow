@@ -15,6 +15,7 @@ const AppPage = styled.div`
   display: flex;
   flex-direction: column;
   font-family: 'Metropolis', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+  -webkit-tap-highlight-color: transparent;
 `
 
 function App() {

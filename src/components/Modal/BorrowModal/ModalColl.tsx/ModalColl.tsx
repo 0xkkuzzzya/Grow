@@ -5,6 +5,7 @@ import { useShowWalletModal } from "../../../../hooks/useStoreModal";
 import CosmosLogo from '../../../../assets/svg/CosmosLogo.svg'
 import QubeLogo from '../../../../assets/svg/QubeLogo.svg'
 import ArrowBlack from '../../../../assets/svg/ArrowBlack.svg'
+import { useShowModalTo } from "../../../../hooks/useShowModal";
 
 const ModalDialogOverlay = animated(DialogOverlay);
 const StyledDialogOvelay = styled(ModalDialogOverlay) `
@@ -124,7 +125,7 @@ const StyledDialogContent = styled(ModalDialogContent)`
 
 export const ModalColl = () => {
 
-    const [ walletModalStatus, setWalletModalStatus ] = useShowWalletModal();
+    const [ walletModalStatus, setWalletModalStatus ] = useShowModalTo();
 
     const open = () => {setWalletModalStatus({b: true})};
     const close = () => {setWalletModalStatus({b: false})};
