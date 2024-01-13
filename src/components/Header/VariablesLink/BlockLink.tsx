@@ -12,7 +12,7 @@ const BlockLink = styled.nav`
     height: 60px;
     justify-content: center;
     margin-right: 30px;
-    margin-left: 50px;
+    margin-left: 145px;
 `
 
 const NavBlock = styled.div`
