@@ -16,6 +16,9 @@ const BalanceBlock = styled.div`
     @media (max-width: 800px) {
         margin-right: 0px;
     }
+    @media (max-width: 500px) {
+        border: none;
+    }
 `
 
 export const MyPageBalance = () => {

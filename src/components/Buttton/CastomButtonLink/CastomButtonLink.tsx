@@ -33,8 +33,7 @@ export const CastomButtonlink = ({children, to}: Props) => {
         to={to}
         style={{
             color: '#000',
-            transition: '.2s ease-in-out',
-            width: '100%'
+            transition: '.2s ease-in-out'
         }}
         >
             {children}

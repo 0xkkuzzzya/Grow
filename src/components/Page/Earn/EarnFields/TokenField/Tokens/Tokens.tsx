@@ -41,7 +41,7 @@ const TokensProtoText = styled.a`
 
 const USQProto = styled.div`
     max-width: 100%;
-    border: 2px solid #3B9CFC;
+    border: 0.18rem solid #3B9CFC;
     margin-left: 24px;
     padding: 2px 10px;
     border-radius: 10px;

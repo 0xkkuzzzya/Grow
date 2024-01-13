@@ -49,6 +49,7 @@ const EarnDepositButton = styled.button `
     font-family: 'Metropolis', sans-serif;
     font-size: 15px;
     transition: all .3s ease-in-out;
+    cursor: pointer;
 `
 
 const EarnWithdrawalButton = styled.button`
@@ -65,6 +66,7 @@ const EarnWithdrawalButton = styled.button`
     font-family: 'Metropolis', sans-serif;
     font-size: 15px;
     transition: all .3s ease-in-out;
+    cursor: pointer;
 `
 
 export const USQField = () => {

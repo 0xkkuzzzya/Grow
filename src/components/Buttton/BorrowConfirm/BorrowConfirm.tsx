@@ -7,6 +7,7 @@ const Button = styled.button`
     border: none;
     margin-top: 30px;
     border-radius: 10px;
+    cursor: pointer;
 `
 
 const ButtonBlock = styled.div`

@@ -11,6 +11,11 @@ const Button = styled.button`
     font-size: 17px;
     font-weight: 700;
     color: #000;
+    display: flex;
+    @media (max-width: 500px) {
+        width: 150px;
+        height: 35px;
+    }
 `
 
 export const EarnButton = () => {

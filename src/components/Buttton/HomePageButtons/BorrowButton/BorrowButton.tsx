@@ -10,6 +10,11 @@ const Button = styled.button`
     border: none;
     font-size: 18px;
     font-weight: 700;
+    display: flex;
+    @media (max-width: 500px) {
+        width: 150px;
+        height: 35px;
+    }
 `
 
 export const BorrowButton = () => {

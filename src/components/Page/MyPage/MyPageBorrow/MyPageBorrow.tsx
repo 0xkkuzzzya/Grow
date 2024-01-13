@@ -15,6 +15,9 @@ const BorrowBlock = styled.div`
     @media (max-width: 800px) {
         width: 100%;
     }
+    @media (max-width: 500px) {
+        border: none;
+    }
 `
 
 export const MyPageBorrow = () => {

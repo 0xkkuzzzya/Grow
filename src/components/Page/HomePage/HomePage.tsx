@@ -5,26 +5,30 @@ import { BorrowButton } from "../../Buttton/HomePageButtons/BorrowButton/BorrowB
 const HomePageBlock = styled.div`
     width: 100%;
     margin-top: 200px;
-    margin-left: 70px;
+    padding-left: 70px;
     @media (max-width: 720px) {
-        padding-left: 10px;
-        padding-right: 10px;
-        margin-left: 0px;
+        
         display: flex;
         justify-content: center;
         flex-direction: column;
+        padding-left: 0;
     }
 `
 
 const MainTextBlock = styled.div`
     width: 600px;
+    margin-left:20px;
+    margin-right: 20px;
     @media (max-width: 720px) {
-        width: 100%;
+        width: 90%;
     }
 `
 
 const MainText = styled.a`
-    font-size: 70px; 
+    font-size: 70px;
+    @media (max-width: 500px) {
+        font-size: 50px;
+    } 
 `
 
 const BlueText = styled.a`
@@ -34,14 +38,19 @@ const BlueText = styled.a`
 const GreyText = styled.h2`
     font-size: 30px;
     color: #BABABA;
+    @media (max-width: 500px) {
+        font-size: 20px;
+    } 
 `
 
 const ButtonBlock = styled.div`
     max-width: 100%;
     display: flex;
+    margin-top: 20px;
     @media (max-width: 500px) {
         margin-left: 10px;
         margin-right: 10px;
+        max-width: 90%;
     }
 `
 

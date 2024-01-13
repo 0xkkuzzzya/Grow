@@ -15,6 +15,9 @@ const DepositBlock = styled.div`
         margin-top: 20px;
         width: 100%;
     }
+    @media (max-width: 500px) {
+        border: none;
+    }
 `
 
 export const MyPageDeposit = () => {
