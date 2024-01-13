@@ -41,15 +41,16 @@ const BlueText = styled.a`
 const GreyText = styled.h2`
     font-size: 30px;
     color: #BABABA;
+    margin-top: 20px;
     @media (max-width: 500px) {
-        font-size: 20px;
+        font-size: 25px;
     } 
 `
 
 const ButtonBlock = styled.div`
     max-width: 100%;
     display: flex;
-    margin-top: 50px;
+    margin-top: 40px;
     margin-left: 20px;
     @media (max-width: 500px) {
         margin-right: 20px;
