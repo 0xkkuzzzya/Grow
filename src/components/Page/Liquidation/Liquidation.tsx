@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 const LiquidationBLock = styled.div`
     width: 100%;
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,7 +9,7 @@ const LiquidationBLock = styled.div`
 
 const TestText = styled.h1`
     font-size: 30px;
-    margin-top: -120px;
+    margin-top: 14em;
     background: linear-gradient(to right, #77bff9, #2d96ff);
     background-clip: border-box;
     -webkit-background-clip: text;

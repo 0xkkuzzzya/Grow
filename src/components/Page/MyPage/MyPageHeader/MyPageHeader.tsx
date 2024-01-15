@@ -7,11 +7,15 @@ const MyHeader = styled.div`
 `
 
 const HeaderContrainer = styled.div`
-    width: 80%;
+    width: 100%;
+    @media (max-width: 500px) {
+        width: 80%;
+    }
 `
 
 const HeaderText = styled.h1`
     font-size: 30px;
+    margin-left: 0px;
 `
 
 

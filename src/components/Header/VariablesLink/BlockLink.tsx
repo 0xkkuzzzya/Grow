@@ -55,7 +55,7 @@ const MobBlockLink = styled.nav <{height: string, padding: string}>`
     background: #ECEBEB;
     padding-bottom: ${props => props.padding};
     @media (min-width: 500px) {
-        margin-left: 92px;
+        margin-left: 77px;
     }
     @media (max-width: 500px) {
         margin-left: 90px;

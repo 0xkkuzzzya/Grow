@@ -70,7 +70,7 @@ export const Header = () => {
     return(
         <MainHeader>
             <HeaderLogoBlock>
-                <Castomlink to="/HomePage">
+                <Castomlink to="/">
                     <HeaderLogoQUBE src={QubeLogo}></HeaderLogoQUBE>
                 </Castomlink>
             </HeaderLogoBlock>

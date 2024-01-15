@@ -45,9 +45,9 @@ const OpenButton = styled.button`
     cursor: pointer;
     border-radius: 50px;
     font-family: 'Metropolis', sans-serif;
-    font-size: 17px;
+    font-size: 15px;
     font-weight: 600;
-    padding: 8px 20px;
+    padding: 10px 20px;
     white-space: nowrap;
     margin-left: auto;
     color: black;

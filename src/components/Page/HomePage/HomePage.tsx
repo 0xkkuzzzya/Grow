@@ -30,7 +30,7 @@ const MainTextBlock = styled.div`
 const MainText = styled.a`
     font-size: 70px;
     @media (max-width: 500px) {
-        font-size: 50px;
+        font-size: 45px;
     } 
 `
 
@@ -43,7 +43,7 @@ const GreyText = styled.h2`
     color: #BABABA;
     margin-top: 20px;
     @media (max-width: 500px) {
-        font-size: 25px;
+        font-size: 20px;
     } 
 `
 
@@ -55,6 +55,7 @@ const ButtonBlock = styled.div`
     @media (max-width: 500px) {
         margin-right: 20px;
         max-width: 90%;
+        justify-content: center;
     }
 `
 
