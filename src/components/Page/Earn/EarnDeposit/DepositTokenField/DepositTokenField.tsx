@@ -46,7 +46,7 @@ export const EarnDepositTokenField = () => {
             <TokenBlock>
                 <EarnDepositToken/>
                 <EarnDepositInput/>
-                <AmountButton>ЬФЧ</AmountButton>
+                <AmountButton>MAX</AmountButton>
             </TokenBlock>
         </FieldBlock>
     )

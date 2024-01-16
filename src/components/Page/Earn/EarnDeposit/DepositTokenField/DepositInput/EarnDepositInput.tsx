@@ -1,14 +1,9 @@
 import styled from "styled-components";
 
-const InputBlock = styled.div`
-    width: 100%;
-`
-
 const Input = styled.input`
-    max-width: 70%;
+    width: 100%;
     height: 100%;
     border: none;
-    border-radius: 20px;
     font-size: 20px;
     color: #333;
     outline: none;
@@ -18,8 +13,6 @@ const Input = styled.input`
 
 export const EarnDepositInput = () => {
     return(
-        <InputBlock>
             <Input placeholder="0"></Input>
-        </InputBlock>
     )
 }
