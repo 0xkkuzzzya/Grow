@@ -14,7 +14,7 @@ const HomePageBlock = styled.div <{margin: string}>`
         display: flex;
         justify-content: center;
         flex-direction: column;
-        padding-left: 0;
+        margin-left: 20px;
     }
 `
 

@@ -29,7 +29,7 @@ function App() {
         <Route path="/withdrawal" element={<EarnDeposit/>}/>
         <Route path="/" element={<HomePage/>}/>
         <Route path="/homepage" element={<HomePage/>}/>
-        <Route path="/mypage" element={<MyPage/>}/>
+        <Route path="/my" element={<MyPage/>}/>
         <Route path="/borrow" element={<Borrow/>}/>
         <Route path="/earn" element={<Earn/>}/>
         <Route path="/liquidation" element={<Liquidation/>}/>
