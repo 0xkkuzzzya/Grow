@@ -74,7 +74,7 @@ export const DefoultLinkBlock = () => {
     return(
             <BlockLink>
                 <LinkBlock>
-                    <Castomlink to="/myPage">My</Castomlink>
+                    <Castomlink to="/my">My</Castomlink>
                 </LinkBlock>
                 <LinkBlock>
                     <Castomlink to="/borrow">Borrow</Castomlink>

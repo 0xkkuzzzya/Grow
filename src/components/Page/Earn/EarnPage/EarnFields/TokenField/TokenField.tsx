@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { EarnUSQToken } from "./Tokens/Tokens";
-import { USQARP } from "./ARP/ARP";
-import { useAccordionEarn } from "../../../../../hooks/useAccordionEarn";
+import { USQAPR } from "./APR/ARP";
+import { useAccordionEarn } from '../../../../../../hooks/useAccordionEarn';
+import { EarnCastomLink } from "../../../EarnCastomLink/EarnCastomLink";
 
 
 const AccordionBlock = styled.div <{height: string}>`
@@ -91,11 +92,15 @@ export const USQField = () => {
         <AccordionBlock height={eAccordion.height} onClick={openAccordion}>
             <TokenFieldBlock>
                 <EarnUSQToken/>
-                <USQARP/>
+                <USQAPR/>
             </TokenFieldBlock>
             <ButtonsBlock >
-                <EarnDepositButton>Deposit</EarnDepositButton>
-                <EarnWithdrawalButton>Withdrawal</EarnWithdrawalButton>
+                <EarnCastomLink to="/deposit">
+                    <EarnDepositButton>Deposit</EarnDepositButton>
+                </EarnCastomLink>
+                <EarnCastomLink to="/withdrawal">
+                    <EarnWithdrawalButton>Withdrawal</EarnWithdrawalButton>
+                </EarnCastomLink>
             </ButtonsBlock>
         </AccordionBlock>
     )

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { EarnContainer } from "./EarnContainer/EarnContainer";
-import { useAccordionStore } from "../../../hooks/useAccordionStore";
+import { useAccordionStore } from "../../../../hooks/useAccordionStore";
 
 const EarnBLock = styled.div <{margin: string}>`
     width: 100%;

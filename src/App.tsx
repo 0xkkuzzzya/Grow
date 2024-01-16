@@ -2,12 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import { Header } from './components/Header/Header';
 import { Borrow } from './components/Page/Borrow/Borrow';
-import { Earn } from './components/Page/Earn/Earn';
+import { Earn } from './components/Page/Earn/EarnPage/Earn';
 import { Liquidation } from './components/Page/Liquidation/Liquidation';
 import { MyPage } from './components/Page/MyPage/MyPage';
 import '@typehaus/metropolis/700.css'
 import { Routes, Route } from 'react-router-dom';
 import { HomePage } from './components/Page/HomePage/HomePage';
+import { EarnDeposit } from './components/Page/Earn/EarnDeposit/EarnDeposit';
 
 
 const AppPage = styled.div`
@@ -24,6 +25,8 @@ function App() {
     <AppPage>
       <Header/>
       <Routes>
+        <Route path="/deposit" element={<EarnDeposit/>}/>
+        <Route path="/withdrawal" element={<EarnDeposit/>}/>
         <Route path="/" element={<HomePage/>}/>
         <Route path="/homepage" element={<HomePage/>}/>
         <Route path="/mypage" element={<MyPage/>}/>

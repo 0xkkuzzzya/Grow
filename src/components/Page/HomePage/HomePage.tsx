@@ -6,8 +6,8 @@ import { useAccordionStore } from "../../../hooks/useAccordionStore";
 const HomePageBlock = styled.div <{margin: string}>`
     width: 100%;
     margin-top: 200px;
-    padding-left: 70px;
     padding-bottom: 30px;
+    margin-left: 60px;
     transition: margin-top .3s ease-in-out;
     @media (max-width: 720px) {
         margin-top: ${props => props.margin};
@@ -20,7 +20,6 @@ const HomePageBlock = styled.div <{margin: string}>`
 
 const MainTextBlock = styled.div`
     width: 600px;
-    margin-left:20px;
     margin-right: 20px;
     @media (max-width: 720px) {
         width: 90%;
@@ -51,7 +50,6 @@ const ButtonBlock = styled.div`
     max-width: 100%;
     display: flex;
     margin-top: 40px;
-    margin-left: 20px;
     @media (max-width: 500px) {
         margin-right: 20px;
         max-width: 90%;
