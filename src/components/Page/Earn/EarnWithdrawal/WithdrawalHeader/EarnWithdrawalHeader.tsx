@@ -29,14 +29,15 @@ const ArrowLogo = styled.img`
 
 
 
-export const EarnDepositHeader = () => {
+
+export const EarnWithdrawalHeader = () => {
     return(
         <HeaderBlock>
             <EarnCastomLink to="/earn">
             <ArrowLogo src={ArrowEarn}></ArrowLogo>
                 <ButtonBack>Back</ButtonBack>
-            </EarnCastomLink>
-            <HeaderText>Deposit USQ</HeaderText>
+            </EarnCastomLink>             
+            <HeaderText>Withdrawal gUSQ</HeaderText>
         </HeaderBlock>
     )
 }

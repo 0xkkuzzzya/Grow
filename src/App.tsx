@@ -9,6 +9,7 @@ import '@typehaus/metropolis/700.css'
 import { Routes, Route } from 'react-router-dom';
 import { HomePage } from './components/Page/HomePage/HomePage';
 import { EarnDeposit } from './components/Page/Earn/EarnDeposit/EarnDeposit';
+import { EarnWithdrawal } from './components/Page/Earn/EarnWithdrawal/EarnWithdrawal';
 
 
 const AppPage = styled.div`
@@ -26,7 +27,7 @@ function App() {
       <Header/>
       <Routes>
         <Route path="/deposit" element={<EarnDeposit/>}/>
-        <Route path="/withdrawal" element={<EarnDeposit/>}/>
+        <Route path="/withdrawal" element={<EarnWithdrawal/>}/>
         <Route path="/" element={<HomePage/>}/>
         <Route path="/homepage" element={<HomePage/>}/>
         <Route path="/my" element={<MyPage/>}/>

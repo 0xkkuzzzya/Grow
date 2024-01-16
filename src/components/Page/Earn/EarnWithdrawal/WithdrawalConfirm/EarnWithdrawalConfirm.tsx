@@ -16,11 +16,11 @@ const ButtonBlock = styled.div`
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 15px;
+    margin-top: 35px;
 `
 
 
-export const EarnDepositConfirm = () => {
+export const EarnWithdrawalConfirm = () => {
     return(
         <ButtonBlock>
             <ConfirmButton>Confirm</ConfirmButton>
