@@ -137,7 +137,6 @@ export const ConnectModal = () => {
     const [ connectWallet, setConnectKeplrWalletStore ] = useConnectKeplrWalletStore();
     const [ wallet, setWallet ] = useWallet();
     const [ walletModalStatus, setWalletModalStatus] = useShowWalletModal();
-    const [ Bcolor, setBColor ] = useColorConnect();
 
     const disconnect = () => {
         setWallet({

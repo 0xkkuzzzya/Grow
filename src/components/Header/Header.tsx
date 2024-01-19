@@ -4,6 +4,7 @@ import { Castomlink } from "./CastomLink/CastomLink";
 import { ConnectButton } from "../Buttton/ConnectButton/CoonectButton";
 import { DefoultLinkBlock, MobileLinkBlock } from "./VariablesLink/BlockLink";
 import { useMediaQuery } from 'react-responsive'
+import { LinkButton } from '../Buttton/LinkButton/LinkButton';
 
 const MainHeader = styled.div`
     max-width: 100%;
@@ -68,15 +69,19 @@ export const Header = () => {
     });
 
     return(
-        <MainHeader>
-            <HeaderLogoBlock>
-                <Castomlink to="/">
-                    <HeaderLogoQUBE src={QubeLogo}></HeaderLogoQUBE>
-                </Castomlink>
-            </HeaderLogoBlock>
-                {isDes && <DefoultLinkBlock/>}
-                {isMob && <MobileLinkBlock/>}
-            <ConnectButton></ConnectButton>
-        </MainHeader>
+        <div>
+            
+            <MainHeader>
+                <HeaderLogoBlock>
+                    <Castomlink to="/">
+                        <HeaderLogoQUBE src={QubeLogo}></HeaderLogoQUBE>
+                    </Castomlink>
+                </HeaderLogoBlock>
+                <LinkButton></LinkButton>
+                    {isDes && <DefoultLinkBlock/>}
+                <ConnectButton></ConnectButton>
+            </MainHeader>
+            {isMob && <MobileLinkBlock/>}
+        </div>
     )
 }

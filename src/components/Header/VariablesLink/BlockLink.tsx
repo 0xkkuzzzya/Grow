@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { Castomlink } from "../CastomLink/CastomLink";
-import { LinkButton } from "../../Buttton/LinkButton/LinkButton";
 import { useAccordionStore } from "../../../hooks/useAccordionStore";
 
 
@@ -19,6 +18,7 @@ const NavBlock = styled.div`
     width: 100%;
     display: flex;
     justify-content: center;
+    background: #ECEBEB;
 `
 
 const LinkBlock = styled.div`
@@ -42,24 +42,15 @@ const MobLinkBlock = styled.div`
 
 const MobBlockLink = styled.nav <{height: string, padding: string}>`
     width: 100%;
-    margin-left: 90px;
-    margin-top: 15px;
+    margin-top: -5px;
     padding-top: 10px;
     max-height: ${props => props.height};
     display: flex;
     flex-direction: column;
     gap: 10px;
-    position: absolute;
     overflow: hidden;
     transition: max-height .3s ease-in-out;
-    background: #ECEBEB;
     padding-bottom: ${props => props.padding};
-    @media (min-width: 500px) {
-        margin-left: 88px;
-    }
-    @media (max-width: 500px) {
-        margin-left: 102px;
-    }
 `
 
 const LinkMobBlock = styled.div`
@@ -85,7 +76,6 @@ export const DefoultLinkBlock = () => {
                 <LinkBlock>
                     <Castomlink to="/liquidation">Liquidation</Castomlink>
                 </LinkBlock>
-                
             </BlockLink>
     )
 }
@@ -96,7 +86,6 @@ export const MobileLinkBlock = () => {
 
     return(
         <LinkMobBlock>
-           <LinkButton></LinkButton>
            <NavBlock>
                 <MobBlockLink height={accordion.height} padding={accordion.padding}>
                     <MobLinkBlock>

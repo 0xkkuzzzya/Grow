@@ -24,7 +24,9 @@ const ButtonBlock = styled.div`
     width: 100%;
     display: flex;
     justify-content: flex-end;
-    
+    @media (min-width: 950px) {
+        display: none;
+    }
 `
 
 export const LinkButton = () => {
@@ -35,7 +37,7 @@ export const LinkButton = () => {
         if(accordion.active == false) {
             setAccordion({
                 active: true,
-                margin: '210px',
+                margin: '50px',
                 height: '190px',
                 padding: '10px'
             })
