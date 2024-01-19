@@ -4,9 +4,8 @@ interface Accordion {
   active: boolean;
   height: string;
   margin: string;
-  padding: string;
 }
 
-const defaultState: Accordion = { active: false, height: '0px', margin: '50px', padding: '0px'};
+const defaultState: Accordion = { active: false, height: '0px', margin: '50px'};
 
 export const [useAccordionStore] = createStore(defaultState);

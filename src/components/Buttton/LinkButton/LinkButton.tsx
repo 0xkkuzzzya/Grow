@@ -38,15 +38,13 @@ export const LinkButton = () => {
             setAccordion({
                 active: true,
                 margin: '50px',
-                height: '190px',
-                padding: '10px'
+                height: '185px',
             })
         } else if (accordion.active == true) {
             setAccordion({
                 active: false,
                 margin: '50px',
                 height: '0px',
-                padding: '0px'
             })
         }
     }

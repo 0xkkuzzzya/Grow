@@ -7,7 +7,7 @@ const ButtonBlock = styled.div`
     border: none;
     color: black;
     font-family: 'Metropolis', sans-serif;
-    border-radius:15px;
+    border-radius: 5px;
     margin-right: 20px;
     cursor: pointer;
     color: black;

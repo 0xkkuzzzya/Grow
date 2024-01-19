@@ -45,7 +45,7 @@ const OpenButton = styled.button <{color: string, border: string}>`
     border: ${props => props.border};
     outline: none;
     cursor: pointer;
-    border-radius: 50px;
+    border-radius: 20px;
     font-family: 'Metropolis', sans-serif;
     font-size: 15px;
     font-weight: 600;
@@ -57,12 +57,6 @@ const OpenButton = styled.button <{color: string, border: string}>`
         font-size: 15px;
         padding: 10px 20px;
     }
-`
-
-
-
-const ConnectText = styled.a`
-    margin-top: 0px; 
 `
 
 const CloseDiv = styled.div`

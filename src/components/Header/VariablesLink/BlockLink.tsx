@@ -19,6 +19,7 @@ const NavBlock = styled.div`
     display: flex;
     justify-content: center;
     background: #ECEBEB;
+    padding-bottom: 10px;
 `
 
 const LinkBlock = styled.div`
@@ -40,7 +41,7 @@ const MobLinkBlock = styled.div`
     }
 `
 
-const MobBlockLink = styled.nav <{height: string, padding: string}>`
+const MobBlockLink = styled.nav <{height: string}>`
     width: 100%;
     margin-top: -5px;
     padding-top: 10px;
@@ -50,7 +51,6 @@ const MobBlockLink = styled.nav <{height: string, padding: string}>`
     gap: 10px;
     overflow: hidden;
     transition: max-height .3s ease-in-out;
-    padding-bottom: ${props => props.padding};
 `
 
 const LinkMobBlock = styled.div`
@@ -87,7 +87,7 @@ export const MobileLinkBlock = () => {
     return(
         <LinkMobBlock>
            <NavBlock>
-                <MobBlockLink height={accordion.height} padding={accordion.padding}>
+                <MobBlockLink height={accordion.height}>
                     <MobLinkBlock>
                         <Castomlink to="/my">My</Castomlink>
                     </MobLinkBlock>
