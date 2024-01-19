@@ -11,6 +11,7 @@ import { UpdateBalances } from '../../../connection/balances'
 import { useToggleTheme } from '../../../hooks/useToggleTheme'
 import { useAlertStore } from '../../../hooks/useAlertStore'
 import { useShowAlert } from '../../../hooks/useShowModal'
+import { useColorConnect } from '../../../hooks/useColorConnect'
 
 const ArrWallets = styled.div`
     width: 100%;
@@ -82,8 +83,8 @@ export const ConnectWallets = () => {
     const [ c, setClient ] = useClient();
     const [ w, setWallet ] = useWallet();
     const [ balances, setBalances ] = useBalancesStore();
+    const [color, setColor] = useColorConnect();
 
-    const [theme, setTheme] = useToggleTheme()
     const [alertStore, setAlertStore] = useAlertStore();
     const [showAlerts, setShowAlerts] = useShowAlert();
     
@@ -96,8 +97,10 @@ export const ConnectWallets = () => {
         }
         if (connected == true) {
             let wallet = {init: true, wallet: walletKeplr, type: "keplr"};
+             
             setConnectWallet({connected})
             setWallet(wallet)
+            
             
             let client = await InitSigner();
             setClient(client)

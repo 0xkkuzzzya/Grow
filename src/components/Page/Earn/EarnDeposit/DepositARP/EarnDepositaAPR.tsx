@@ -9,12 +9,12 @@ const ARPBlock = styled.div`
 `
 
 const ARPText = styled.h1`
-    font-size: 20px;
+    font-size: 18px;
     color: #bababa;
 `
 
 const ARPAmount = styled.a`
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
     color: #44A884;
 `

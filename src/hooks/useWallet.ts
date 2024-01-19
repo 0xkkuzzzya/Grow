@@ -3,7 +3,7 @@ import { createStore } from './store';
 export interface Wallet {
         init: boolean;
         wallet: any;
-        type: string
+        type: string;
 }
 
 const defaultState: Wallet = { init: false, wallet: null, type: "" };

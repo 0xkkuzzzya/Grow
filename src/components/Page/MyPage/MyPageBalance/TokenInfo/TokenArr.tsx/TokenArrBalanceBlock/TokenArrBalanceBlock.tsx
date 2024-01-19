@@ -20,6 +20,7 @@ const TokenBalanceUSQ = styled.a`
     font-weight: 700;
     font-size: 15px;
     color: #C0C0C0;
+    margin-top: 2px;
 `
 
 

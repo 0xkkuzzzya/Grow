@@ -29,7 +29,7 @@ const MainTextBlock = styled.div`
 const MainText = styled.a`
     font-size: 70px;
     @media (max-width: 500px) {
-        font-size: 45px;
+        font-size: 50px;
     } 
 `
 
@@ -42,7 +42,8 @@ const GreyText = styled.h2`
     color: #BABABA;
     margin-top: 20px;
     @media (max-width: 500px) {
-        font-size: 20px;
+        font-size: 18px;
+        margin-top: 40px;
     } 
 `
 

@@ -10,6 +10,7 @@ const ConfirmButton = styled.button`
     margin: 0 auto;
     border-radius: 12px;
     cursor: pointer;
+    color: black;
 `
 
 const ButtonBlock = styled.div`

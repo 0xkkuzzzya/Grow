@@ -32,7 +32,7 @@ const ModalBlock = styled.div`
 const Logo = styled.img`
     width: 30px;
     height: 30px;
-    border-radius: 50px;
+    border-radius: 50%;
     margin-right: 10px;
 `
 

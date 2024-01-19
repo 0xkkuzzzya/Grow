@@ -31,7 +31,7 @@ const TokensProto = styled.div`
 
 const TokensProtoText = styled.a`
     color: #3B9CFC;
-    font-weight: 700;
+    font-weight: 800;
     font-size: 12px;
 `
 

@@ -31,6 +31,10 @@ const LTVInfo = styled.h1`
 
 const BlockInfo = styled.div`
     width: 90%;
+    display: flex;
+    justify-content: space-between;
+    color: #BABABA;
+    align-items: center;
 `
 
 export const BorrowInfo = () => {
@@ -38,6 +42,7 @@ export const BorrowInfo = () => {
         <InfoBlock>
             <BlockInfo>
                 <InfoText>Interest Rate</InfoText>
+                <LTVInfo>0%</LTVInfo>
             </BlockInfo>
             <LTVBlock>
                 <LTV>Max LTV</LTV>
