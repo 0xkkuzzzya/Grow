@@ -6,6 +6,7 @@ import { ConnectWallets } from '../../Wallets/ConnetsWallets/ConnectWallets';
 import { useConnectKeplrWalletStore } from '../../../hooks/useConnectKeplrWalletStore';
 import { useWallet } from '../../../hooks/useWallet';
 import { useShowWalletModal } from '../../../hooks/useShowModal';
+import { useColorConnect } from '../../../hooks/useColorConnect';
 
 const ModalDialogOverlay = animated(DialogOverlay);
 const StyledDialogOvelay = styled(ModalDialogOverlay) `
@@ -38,10 +39,10 @@ const CloseButton = styled.button`
     
 `
 
-const OpenButton = styled.button`
+const OpenButton = styled.button <{color: string, border: string}>`
     max-width:100%;
-    background:transparent;
-    border:none;
+    background: ${props => props.color};
+    border: ${props => props.border};
     outline: none;
     cursor: pointer;
     border-radius: 50px;
@@ -57,6 +58,8 @@ const OpenButton = styled.button`
         padding: 10px 20px;
     }
 `
+
+
 
 const ConnectText = styled.a`
     margin-top: 0px; 
@@ -128,14 +131,13 @@ export const ConnectModal = () => {
     const open = () => {setWalletModalStatus({b: true})};
     const close = () => {setWalletModalStatus({b: false})};
 
-
+    let BackgroundConnectButton = 'linear-gradient(to right, rgb(119, 191, 249), rgb(45, 150, 255))';
     var walletAddr: string = "";
-
-    let KeplrWallet: string = "";
 
     const [ connectWallet, setConnectKeplrWalletStore ] = useConnectKeplrWalletStore();
     const [ wallet, setWallet ] = useWallet();
     const [ walletModalStatus, setWalletModalStatus] = useShowWalletModal();
+    const [ Bcolor, setBColor ] = useColorConnect();
 
     const disconnect = () => {
         setWallet({
@@ -149,16 +151,18 @@ export const ConnectModal = () => {
         close()
     }
 
+    
     if(wallet.type == "keplr") {
         walletAddr =  'qube...' + String(wallet.wallet.bech32Address).slice(38,43);
     } 
-
-                
+    
 
     return (
       <div>
-        <OpenButton onClick={wallet.init == false? open : disconnect}>
-            {walletAddr == "" || undefined ? "Connect Wallet" : <ConnectBlock> <LogoKeplr src={KeplrLogo}/> {walletAddr} </ConnectBlock>}
+        <OpenButton onClick={wallet.init == false? open : disconnect} 
+        color={connectWallet.connected == true ? 'transparment' : BackgroundConnectButton} 
+        border={connectWallet.connected == true ? '2px solid #6CBBFF' : 'none' }>
+            {walletAddr == "" || undefined ? "Connect Wallet" : <ConnectBlock>  <LogoKeplr src={KeplrLogo}/>  {walletAddr} </ConnectBlock>}
         </OpenButton>
         <StyledDialogOvelay isOpen={walletModalStatus.b && !connectWallet.connected} onDismiss={close}>
             <StyledDialogContent>

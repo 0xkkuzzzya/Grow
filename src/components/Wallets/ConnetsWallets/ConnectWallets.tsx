@@ -83,7 +83,6 @@ export const ConnectWallets = () => {
     const [ c, setClient ] = useClient();
     const [ w, setWallet ] = useWallet();
     const [ balances, setBalances ] = useBalancesStore();
-    const [color, setColor] = useColorConnect();
 
     const [alertStore, setAlertStore] = useAlertStore();
     const [showAlerts, setShowAlerts] = useShowAlert();
@@ -97,14 +96,12 @@ export const ConnectWallets = () => {
         }
         if (connected == true) {
             let wallet = {init: true, wallet: walletKeplr, type: "keplr"};
-             
             setConnectWallet({connected})
             setWallet(wallet)
             
-            
             let client = await InitSigner();
             setClient(client)
-
+            
             let blns = await UpdateBalances(wallet, balances);
             setBalances(blns)
         }

@@ -1,13 +1,11 @@
 import styled from "styled-components";
 import { ConnectModal } from "../../Modal/CoonectModal/ConnectModal";
-import { useWallet } from "../../../hooks/useWallet";
-import { useConnectKeplrWalletStore } from "../../../hooks/useConnectKeplrWalletStore";
 import { useColorConnect } from "../../../hooks/useColorConnect";
+import { useConnectKeplrWalletStore } from "../../../hooks/useConnectKeplrWalletStore";
 
-const ButtonConnect = styled.div `
+const ButtonBlock = styled.div`
     max-width: 100%;
     height: 35px;
-    background: linear-gradient(to right, rgb(119, 191, 249), rgb(45, 150, 255));
     border: none;
     color: black;
     font-family: 'Metropolis', sans-serif;
@@ -25,13 +23,12 @@ const ButtonConnect = styled.div `
 `
 
 
+
 export const ConnectButton = () => {
 
-    const [color, setColor] = useColorConnect();
-
     return(
-        <ButtonConnect>
+        <ButtonBlock>
             <ConnectModal></ConnectModal>
-        </ButtonConnect>
+        </ButtonBlock>
     )
 }

@@ -13,8 +13,9 @@ const Button = styled.button`
     color: #000;
     display: flex;
     @media (max-width: 500px) {
-        width: 150px;
+        width: 120px;
         height: 35px;
+        margin-right: 10px;
     }
 `
 

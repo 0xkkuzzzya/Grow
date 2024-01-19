@@ -100,7 +100,7 @@ export const MobileLinkBlock = () => {
            <NavBlock>
                 <MobBlockLink height={accordion.height} padding={accordion.padding}>
                     <MobLinkBlock>
-                        <Castomlink to="/mypage">My</Castomlink>
+                        <Castomlink to="/my">My</Castomlink>
                     </MobLinkBlock>
                     <MobLinkBlock>
                         <Castomlink to="/borrow">Borrow</Castomlink>
