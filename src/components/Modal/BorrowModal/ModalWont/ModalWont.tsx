@@ -29,16 +29,17 @@ const ModalBlock = styled.div`
 `
 
 const CloseButton = styled.button`
-    width: 20px;
-    font-size: 35px;
-    margin-top: 10px;
+    width: 25px;
+    height: 25px;
+    font-size: 30px;
+    margin-right: 26px;
+    margin-top: -10px;
     background-color: transparent;
     border: none;
     cursor: pointer;
-    color: #333;
-    margin-left: 90%;
+    color: black;
+    margin-left: auto;
     outline: none;
-    
 `
 
 const OpenButton = styled.button`
@@ -59,16 +60,30 @@ const OpenButton = styled.button`
     color: black;
 `
 
-const ConnectText = styled.a`
-    margin-top: 0px; 
+const CloseButtonBlock = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+`
+
+const ModalText = styled.h4 `
+    margin-left: 26px;
+    font-size: 20px;
+    color: black;
+`
+
+const ModalTextBlock = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
 `
 
 const CloseDiv = styled.div`
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
     font-family: 'Metropolis', sans-serif;
-    color: white;
 `
 
 const ContentDiv = styled.div`
@@ -129,7 +144,6 @@ export const ModalWont = () => {
 
     return (
       <ModalBlock>
-        
         <OpenButton onClick={open}>
         <Logo src={CosmosLogo}></Logo>
            ATOM
@@ -137,10 +151,15 @@ export const ModalWont = () => {
             </OpenButton>
         <StyledDialogOvelay isOpen={walletModalStatus.b}  onDismiss={close}>
             <StyledDialogContent>
-                <CloseDiv>              
-                    <CloseButton onClick={close}>
-                    <span aria-hidden>×</span>
-                    </CloseButton>
+                <CloseDiv>
+                    <ModalTextBlock>
+                        <ModalText>Select a token</ModalText>
+                    </ModalTextBlock>
+                    <CloseButtonBlock>
+                        <CloseButton onClick={close}>
+                        <span aria-hidden>×</span>
+                        </CloseButton>
+                    </CloseButtonBlock>
                 </CloseDiv>
                 <ContentDiv></ContentDiv>
             </StyledDialogContent>

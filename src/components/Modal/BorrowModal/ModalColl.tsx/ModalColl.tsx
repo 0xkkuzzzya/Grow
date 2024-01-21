@@ -37,16 +37,17 @@ const Logo = styled.img`
 `
 
 const CloseButton = styled.button`
-    width: 20px;
-    font-size: 35px;
-    margin-top: 10px;
+    width: 25px;
+    height: 25px;
+    font-size: 30px;
+    margin-right: 26px;
+    margin-top: -10px;
     background-color: transparent;
     border: none;
     cursor: pointer;
-    color: #333;
-    margin-left: 90%;
+    color: black;
+    margin-left: auto;
     outline: none;
-    
 `
 
 const OpenButton = styled.button`
@@ -67,16 +68,30 @@ const OpenButton = styled.button`
     color: black;
 `
 
-const ConnectText = styled.a`
-    margin-top: 0px; 
+const CloseButtonBlock = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+`
+
+const ModalText = styled.h4 `
+    margin-left: 26px;
+    font-size: 20px;
+    color: black;
+`
+
+const ModalTextBlock = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
 `
 
 const CloseDiv = styled.div`
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
     font-family: 'Metropolis', sans-serif;
-    color: white;
 `
 
 const ContentDiv = styled.div`
@@ -86,7 +101,7 @@ const ContentDiv = styled.div`
     height: 100%;
     @media (max-width: 500px) {
         flex-direction: column;
-    }
+        }
 `
 
 const Arrow = styled.img`
@@ -132,7 +147,6 @@ export const ModalColl = () => {
 
     return (
       <ModalBlock>
-        
         <OpenButton onClick={open}>
         <Logo src={QubeLogo}></Logo>
            QUBE
@@ -140,10 +154,15 @@ export const ModalColl = () => {
             </OpenButton>
         <StyledDialogOvelay isOpen={walletModalStatus.b}  onDismiss={close}>
             <StyledDialogContent>
-                <CloseDiv>              
-                    <CloseButton onClick={close}>
-                    <span aria-hidden>×</span>
-                    </CloseButton>
+            <CloseDiv>
+                    <ModalTextBlock>
+                        <ModalText>Select a token</ModalText>
+                    </ModalTextBlock>
+                    <CloseButtonBlock>
+                        <CloseButton onClick={close}>
+                        <span aria-hidden>×</span>
+                        </CloseButton>
+                    </CloseButtonBlock>
                 </CloseDiv>
                 <ContentDiv></ContentDiv>
             </StyledDialogContent>

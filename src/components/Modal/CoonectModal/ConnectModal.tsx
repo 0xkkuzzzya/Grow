@@ -27,16 +27,23 @@ const StyledDialogOvelay = styled(ModalDialogOverlay) `
 `
 
 const CloseButton = styled.button`
-    width: 20px;
-    font-size: 35px;
+    width: 25px;
+    height: 25px;
+    font-size: 30px;
+    margin-right: 30px;
     margin-top: 10px;
     background-color: transparent;
     border: none;
     cursor: pointer;
-    color: #333;
-    margin-left: 90%;
+    color: black;
+    margin-left: auto;
     outline: none;
-    
+`
+
+const CloseButtonBlock = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
 `
 
 const OpenButton = styled.button <{color: string, border: string}>`
@@ -160,9 +167,11 @@ export const ConnectModal = () => {
         <StyledDialogOvelay isOpen={walletModalStatus.b && !connectWallet.connected} onDismiss={close}>
             <StyledDialogContent>
                 <CloseDiv>              
-                    <CloseButton onClick={close}>
-                    <span aria-hidden>×</span>
-                    </CloseButton>
+                    <CloseButtonBlock>
+                        <CloseButton onClick={close}>
+                        <span aria-hidden>×</span>
+                        </CloseButton>
+                    </CloseButtonBlock>
                 </CloseDiv>
                 <ContentDiv>
                     <WalletList>
