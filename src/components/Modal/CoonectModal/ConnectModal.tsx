@@ -46,7 +46,7 @@ const CloseButtonBlock = styled.div`
     justify-content: flex-end;
 `
 
-const OpenButton = styled.button <{color: string, border: string}>`
+const OpenButton = styled.button <{color: string, border: string, margin: string}>`
     max-width:100%;
     background: ${props => props.color};
     border: ${props => props.border};
@@ -59,10 +59,10 @@ const OpenButton = styled.button <{color: string, border: string}>`
     padding: 10px 20px;
     white-space: nowrap;
     margin-left: auto;
+    margin-top: ${props => props.margin};
     color: #000;
     @media (max-width: 500px) {
         font-size: 15px;
-        padding: 10px 20px;
     }
 `
 
@@ -161,7 +161,8 @@ export const ConnectModal = () => {
       <div>
         <OpenButton onClick={wallet.init == false? open : disconnect} 
         color={connectWallet.connected == true ? 'transparment' : BackgroundConnectButton} 
-        border={connectWallet.connected == true ? '2px solid #6CBBFF' : 'none' }>
+        border={connectWallet.connected == true ? '2px solid #6CBBFF' : 'none' }
+        margin={connectWallet.connected == true ? '-5px' : '0px' }>
             {walletAddr == "" || undefined ? "Connect Wallet" : <ConnectBlock>  <LogoKeplr src={KeplrLogo}/>  {walletAddr} </ConnectBlock>}
         </OpenButton>
         <StyledDialogOvelay isOpen={walletModalStatus.b && !connectWallet.connected} onDismiss={close}>
