@@ -14,6 +14,9 @@ const TestText = styled.h1`
     background-clip: border-box;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    @media (max-width: 500px) {
+        margin-top: 11em;
+    }
 `
 
 export const Liquidation = () => {

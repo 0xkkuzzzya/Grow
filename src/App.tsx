@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import { Header } from './components/Header/Header';
 import { Borrow } from './components/Page/Borrow/Borrow';
@@ -16,8 +15,7 @@ const AppPage = styled.div`
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  font-family: 'Metropolis', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
-  -webkit-tap-highlight-color: transparent;
+  font-family: 'Inter', sans-serif;
 `
 
 function App() {

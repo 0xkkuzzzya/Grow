@@ -5,13 +5,15 @@ import { BorrowTokenInfo } from "./BorrowTokenInfo/BorrowTokenInfo";
 
 const BorrowBlock = styled.div`
     width: 400px;
-    height: 280px;
+    max-height: 100%;
+    transition: max-height .3s ease-in-out;
     border: 3px solid #EEEEEE;
     margin-top: 20px;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 30px;
     @media (max-width: 800px) {
         width: 100%;
     }

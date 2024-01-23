@@ -14,12 +14,13 @@ const BlockLink = styled.nav`
     margin-left: 145px;
 `
 
-const NavBlock = styled.div`
+const NavBlock = styled.div <{padding: string}>`
     width: 100%;
     display: flex;
     justify-content: center;
     background: #ECEBEB;
-    padding-bottom: 10px;
+    padding-bottom: ${props => props.padding};
+    transition: padding-bottom .3s ease-in-out;
 `
 
 const LinkBlock = styled.div`
@@ -86,7 +87,7 @@ export const MobileLinkBlock = () => {
 
     return(
         <LinkMobBlock>
-           <NavBlock>
+           <NavBlock padding={accordion.active == true ? '20px' : '0px'}>
                 <MobBlockLink height={accordion.height}>
                     <MobLinkBlock>
                         <Castomlink to="/my">My</Castomlink>
