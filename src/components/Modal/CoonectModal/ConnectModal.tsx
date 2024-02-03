@@ -30,20 +30,19 @@ const CloseButton = styled.button`
     width: 25px;
     height: 25px;
     font-size: 30px;
-    margin-right: 30px;
+    margin-right: 20px;
     margin-top: 10px;
     background-color: transparent;
     border: none;
-    cursor: pointer;
     color: black;
     margin-left: auto;
     outline: none;
 `
 
 const CloseButtonBlock = styled.div`
-    width: 100%;
     display: flex;
     justify-content: flex-end;
+    width: 100%;
 `
 
 const OpenButton = styled.button <{color: string, border: string, margin: string}>`
@@ -72,11 +71,12 @@ const CloseDiv = styled.div`
     align-items: center;
     font-family: 'Metropolis', sans-serif;
     color: white;
+    margin-top: 10px;
 `
 
 const ContentDiv = styled.div`
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     height: 100%;
     @media (max-width: 500px) {
@@ -87,6 +87,7 @@ const ContentDiv = styled.div`
 const WalletList = styled.div`
     width: 100%;
     height: 100%;
+    margin-top: 10px;
 `
 
 const LogoKeplr = styled.img`
@@ -97,9 +98,22 @@ const LogoKeplr = styled.img`
 `
 
 const ConnectBlock = styled.div`
-    width: 100%;
     display: flex;
     align-items: center;
+`
+
+const HeaderText = styled.a`
+    font-size: 20px;
+    color: black;
+    white-space: nowrap;
+`
+
+const HeaderBlock = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-left: 3em;
+    margin-top: 20px;
 `
 
 
@@ -107,8 +121,8 @@ const ModalDialogContent = animated(DialogContent);
 const StyledDialogContent = styled(ModalDialogContent)`
     &[data-reach-dialog-content] {
         background-color: rgb(245,245,245);
-        width: 535px;
-        height: 350px;
+        width: 375px;
+        height: 600px;
         display: flex;
         flex-direction: column;
         border-radius: 20px;
@@ -167,12 +181,13 @@ export const ConnectModal = () => {
         </OpenButton>
         <StyledDialogOvelay isOpen={walletModalStatus.b && !connectWallet.connected} onDismiss={close}>
             <StyledDialogContent>
-                <CloseDiv>              
-                    <CloseButtonBlock>
-                        <CloseButton onClick={close}>
-                        <span aria-hidden>×</span>
+                <CloseDiv>
+                    <HeaderBlock>
+                        <HeaderText>Connect Wallet</HeaderText>
+                    </HeaderBlock>              
+                        <CloseButton >
+                            <a style={{cursor: "pointer"}} onClick={close} aria-hidden>×</a>
                         </CloseButton>
-                    </CloseButtonBlock>
                 </CloseDiv>
                 <ContentDiv>
                     <WalletList>
