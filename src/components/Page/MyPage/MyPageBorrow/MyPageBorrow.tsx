@@ -1,34 +1,46 @@
 import styled from "styled-components";
-import { BorrowHeader } from "./BorrowHeader/BorrowHeader";
-import { BorrowBalance } from "./BorrowBalance.tsx/BorrowBalance";
-import { BorrowTokenInfo } from "./BorrowTokenInfo/BorrowTokenInfo";
+import { TokenFieldBorrow } from "./TokenFieldBorrow/TokenFieldBorrow";
 
-const BorrowBlock = styled.div`
-    width: 400px;
-    max-height: 100%;
-    transition: max-height .3s ease-in-out;
-    border: 3px solid #EEEEEE;
-    margin-top: 20px;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 30px;
-    @media (max-width: 800px) {
-        width: 100%;
-    }
-    @media (max-width: 500px) {
-        border: none;
-        margin-top: 0px;
-    }
+const DepositBlock = styled.div`
+    width: 100%;
+    height: 100px;
+    margin-top: 30px;
 `
+
+const InfoBlock = styled.div`
+    display: flex;
+    align-items: center;
+`
+
+const AssetsBlock = styled.div`
+    margin-left: 15px;
+`
+
+const Text = styled.a`
+    font-size: 14px;
+    font-weight: 700;
+    color: rgba(186, 186, 186, 1);
+`
+
+const PriceBlock = styled.div`
+    margin-left: auto;
+    margin-right: auto;
+`
+
+const AmountBlock = styled.div`
+    margin-right: 20px;
+`
+
 
 export const MyPageBorrow = () => {
     return(
-        <BorrowBlock>
-            <BorrowHeader/>
-            <BorrowBalance/>
-            <BorrowTokenInfo/>
-        </BorrowBlock>
-    )
+        <DepositBlock>
+             <InfoBlock>
+                <AssetsBlock> <Text>Assets</Text> </AssetsBlock>
+                <PriceBlock> <Text>Amount(USQ)</Text> </PriceBlock>
+                <AmountBlock style={{width: "90px"}}> <Text><br></br></Text> </AmountBlock>
+            </InfoBlock>
+            <TokenFieldBorrow/>
+        </DepositBlock>
+    ) 
 }

@@ -1,79 +1,66 @@
 import styled from "styled-components";
-import { useAccordionStore } from "../../../hooks/useAccordionStore";
+import USQBalance from '../../../assets/svg/USQLogo.svg'
 import { MyPageHeader } from "./MyPageHeader/MyPageHeader";
-import { MyPageBalance } from "./MyPageBalance/MyPageBalance";
-import { MyPageDeposit } from "./MyPageDeposit/MyPageDeposit";
-import { MyPageBorrow } from "./MyPageBorrow/MyPageBorrow";
 
-const MyPageBLock = styled.div <{margin: string}>`
+const MyPageBlock = styled.div`
     width: 100%;
-    height: 100%;
-    margin-top: ${props => props.margin};
-    display: flex;
-    justify-content: center;
 `
 
-const MyPageContainer = styled.div` 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 100%;
+const MyPageContainer = styled.div`
+    max-width: 700px;
+    margin: 0 auto;
 `
 
-const ContentBlock = styled.div`
-    max-width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    max-height: 100%;
-    transition: all .3s ease-in-out;
-    @media (max-width: 800px) {
-        flex-direction: column;
-        align-items: center;
-    }
+const HeaderBlock = styled.div`
+    width: 100%;
 `
 
 const BalanceBlock = styled.div`
-    max-width: 100%;
-    height: 100%;
-    display: flex;
-    border: 3px solid #EEEEEE;
-    margin-right: 20px;
-    border-radius: 15px;
-    @media (max-width: 800px) {
-        margin-right: 0px;
-    }
-    @media (max-width: 500px) {
-        border: none;
-    }
+    width: 100%;
 `
 
-const DepositBorrowBlock = styled.div`
+const BalanceText = styled.h1`
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-size: 70px;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+`
+
+const BalanceImg = styled.img`
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+`
+
+const DynamicBlock = styled.div`
     width: 100%;
-    height: 100%;
+    height: 13px;
+    background: linear-gradient(to right, rgba(87, 187, 242, 1), rgba(10, 152, 252, 1));
+    border-radius: 20px;
+`
+
+const ContainerBlock = styled.div`
+    
 `
 
 
 export const MyPage = () => {
-
-    const [accordion, setAccordion] = useAccordionStore()
-
     return(
-        <MyPageBLock margin={accordion.margin}>
+        <MyPageBlock>
             <MyPageContainer>
-            <MyPageHeader/>
-            <ContentBlock>
+                <HeaderBlock>
+                    <h1 style={{fontSize: "30px", fontWeight: "600"}}>My Page</h1>
+                </HeaderBlock>
                 <BalanceBlock>
-                    <MyPageBalance/>
+                    <BalanceText>1000<BalanceImg src={USQBalance}></BalanceImg>
+                </BalanceText>
                 </BalanceBlock>
-                <DepositBorrowBlock>
-                    <MyPageDeposit/>
-                    <MyPageBorrow/>
-                </DepositBorrowBlock>
-            </ContentBlock>
+                <DynamicBlock/>
+                <ContainerBlock>
+                    <MyPageHeader></MyPageHeader>
+                </ContainerBlock>
             </MyPageContainer>
-        </MyPageBLock>
+        </MyPageBlock>
     )
 }

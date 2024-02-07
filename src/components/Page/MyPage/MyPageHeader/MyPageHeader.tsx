@@ -1,30 +1,65 @@
+import { useState } from "react";
 import styled from "styled-components";
+import { MyPageBalance } from "../MyPageBalance/MyPageBalance";
+import { MyPageDeposit } from "../MyPageDeposit/MyPageDeposit";
+import { MyPageBorrow } from "../MyPageBorrow/MyPageBorrow";
 
-const MyHeader = styled.div`
+const HeaderBlock = styled.div`
     width: 100%;
+    margin-top: 30px;
+`
+
+const ButtonBlock = styled.div`
     display: flex;
-    justify-content: center;
+    align-items: center;
 `
 
-const HeaderContrainer = styled.div`
-    width: 100%;
-    @media (max-width: 500px) {
-        width: 80%;
-    }
-`
-
-const HeaderText = styled.h1`
+const ButtonLink = styled.button`
+    max-width: 100%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
     font-size: 30px;
-    margin-left: 0px;
+    font-weight: 700;
+    outline: none;
+    font-family: 'Inter', sans-serif;
 `
 
 
 export const MyPageHeader = () => {
+
+    const [block, setBlock] = useState('Balance')
+
+    const greyText: string = "rgba(192, 192, 192, 1)"
+    const underline: string = "underline 2px solid rgba(87, 187, 242, 1)"
+    
     return(
-        <MyHeader>
-            <HeaderContrainer>
-                <HeaderText>My Page</HeaderText>
-            </HeaderContrainer>
-        </MyHeader>
+        <HeaderBlock>
+            <ButtonBlock>
+                <ButtonLink 
+                onClick={() => {setBlock('Balance')}}
+                style={{
+                    color: block == 'Balance' ? 'black' : greyText,
+                    textDecoration: block == 'Balance' ? underline : ''
+                }}>Balance</ButtonLink>
+                <ButtonLink 
+                onClick={() => {setBlock('Deposit')}} 
+                style={{marginLeft: "20px",
+                    color: block == 'Deposit' ? 'black' : greyText,
+                    textDecoration: block == 'Deposit' ? underline : ''
+                }}>Deposit</ButtonLink>
+                <ButtonLink 
+                onClick={() => {setBlock('Borrow')}} 
+                style={{marginLeft: "20px",
+                    color: block == 'Borrow' ? 'black' : greyText,
+                    textDecoration: block == 'Borrow' ? underline : ''
+                }}>Borrow</ButtonLink>
+            </ButtonBlock>
+            <div>
+                {block == 'Balance' && <MyPageBalance/>}
+                {block == 'Deposit' && <MyPageDeposit/>}
+                {block == 'Borrow' && <MyPageBorrow/>}
+            </div>
+        </HeaderBlock>
     )
 }

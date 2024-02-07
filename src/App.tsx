@@ -4,7 +4,6 @@ import { Borrow } from './components/Page/Borrow/Borrow';
 import { Earn } from './components/Page/Earn/EarnPage/Earn';
 import { Liquidation } from './components/Page/Liquidation/Liquidation';
 import { MyPage } from './components/Page/MyPage/MyPage';
-import '@typehaus/metropolis/700.css'
 import { Routes, Route } from 'react-router-dom';
 import { HomePage } from './components/Page/HomePage/HomePage';
 import { EarnDeposit } from './components/Page/Earn/EarnDeposit/EarnDeposit';

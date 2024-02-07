@@ -20,8 +20,6 @@ const AccordionBlock = styled.div <{height: string}>`
 
 const ButtonsBlock = styled.div`
     width: 100%;
-    
-    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,9 +45,9 @@ const EarnDepositButton = styled.button `
     margin-top: 5px;
     padding: 7px 15px;
     font-weight: 700;
-    font-family: 'Metropolis', sans-serif;
-    font-size: 15px;
+    font-family: 'Inter', sans-serif;
     transition: all .3s ease-in-out;
+    font-size: 15px;
     cursor: pointer;
 `
 
@@ -64,9 +62,9 @@ const EarnWithdrawalButton = styled.button`
     margin-top: 5px;
     padding: 7px 15px;
     font-weight: 700;
-    font-family: 'Metropolis', sans-serif;
-    font-size: 15px;
+    font-family: 'Inter', sans-serif;
     transition: all .3s ease-in-out;
+    font-size: 15px;
     cursor: pointer;
 `
 

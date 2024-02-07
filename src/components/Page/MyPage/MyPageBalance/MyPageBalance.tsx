@@ -1,24 +1,45 @@
 import styled from "styled-components";
-import { BalanceHeader } from "./BalanceHeader/BalanceHeader";
-import { BalanceInfoBlock } from "./BalanceInfoBlock/BalanceInfoBlock";
-import { TokenInfo } from "./TokenInfo/TokenInfo";
+import { TokenFieldBalance } from "./TokenFieldBalance/TokenFieldsBalance";
 
 const BalanceBlock = styled.div`
-    width: 425px;
-    max-height: 100%;
-    transition: max-height .3s ease-in-out;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 20px;
+    width: 100%;
+    margin-top: 20px;
 `
+
+const InfoBlock = styled.div`
+    display: flex;
+    align-items: center;
+`
+
+const AssetsBlock = styled.div`
+    margin-left: 15px;
+`
+
+const Text = styled.a`
+    font-size: 14px;
+    font-weight: 700;
+    color: rgba(186, 186, 186, 1);
+`
+
+const PriceBlock = styled.div`
+    margin-left: auto;
+    margin-right: auto;
+`
+
+const AmountBlock = styled.div`
+    margin-right: 20px;
+`
+
 
 export const MyPageBalance = () => {
     return(
         <BalanceBlock>
-            <BalanceHeader/>
-            <BalanceInfoBlock/>
-            <TokenInfo/>
+            <InfoBlock>
+                <AssetsBlock> <Text>Assets</Text> </AssetsBlock>
+                <PriceBlock> <Text>Price(USQ)</Text> </PriceBlock>
+                <AmountBlock> <Text>Amount</Text> </AmountBlock>
+            </InfoBlock>
+            <TokenFieldBalance></TokenFieldBalance>
         </BalanceBlock>
     )
 }
