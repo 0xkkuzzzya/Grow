@@ -30,7 +30,7 @@ const FieldBlock = styled.div`
 `
 
 const TokenImg = styled.img`
-    width: 40px;
+    width: 45px;
     margin-left: 15px;
 `
 
@@ -105,7 +105,7 @@ export const TokenFieldBorrow = () => {
                 <PriceText>1 USQ</PriceText>
             </PriceBlock>
             <ButtonsBlock >
-                <EarnCastomLink to="/Manage">
+                <EarnCastomLink to="/borrow">
                     <EarnDepositButton>Manage</EarnDepositButton>
                 </EarnCastomLink>
             </ButtonsBlock>

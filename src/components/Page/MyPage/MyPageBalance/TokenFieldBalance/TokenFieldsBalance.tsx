@@ -29,7 +29,7 @@ const FieldBlock = styled.div`
 `
 
 const TokenImg = styled.img`
-    width: 40px;
+    width: 45px;
     margin-left: 15px;
 `
 

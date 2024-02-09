@@ -69,10 +69,10 @@ export const DefoultLinkBlock = () => {
                     <Castomlink to="/my">My</Castomlink>
                 </LinkBlock>
                 <LinkBlock>
-                    <Castomlink to="/borrow">Borrow</Castomlink>
+                    <Castomlink to="/earn">Earn</Castomlink>
                 </LinkBlock>
                 <LinkBlock>
-                    <Castomlink to="/earn">Earn</Castomlink>
+                    <Castomlink to="/borrow">Borrow</Castomlink>
                 </LinkBlock>
                 <LinkBlock>
                     <Castomlink to="/liquidation">Liquidation</Castomlink>
@@ -106,4 +106,3 @@ export const MobileLinkBlock = () => {
         </LinkMobBlock>
     )
 }
-    

@@ -25,6 +25,13 @@ const ButtonLink = styled.button`
     font-family: 'Inter', sans-serif;
 `
 
+const DynamicUndeBlock = styled.div`
+    width: 100%;
+    border: 1px solid rgba(87, 187, 242, 1);
+    border-radius: 20px;
+    margin-top: 10px;
+`
+
 
 export const MyPageHeader = () => {
 
@@ -55,6 +62,7 @@ export const MyPageHeader = () => {
                     textDecoration: block == 'Borrow' ? underline : ''
                 }}>Borrow</ButtonLink>
             </ButtonBlock>
+            <DynamicUndeBlock></DynamicUndeBlock>
             <div>
                 {block == 'Balance' && <MyPageBalance/>}
                 {block == 'Deposit' && <MyPageDeposit/>}

@@ -3,7 +3,7 @@ import { TokenFieldBalance } from "./TokenFieldBalance/TokenFieldsBalance";
 
 const BalanceBlock = styled.div`
     width: 100%;
-    margin-top: 20px;
+    margin-top: 10px;
 `
 
 const InfoBlock = styled.div`

@@ -19,7 +19,7 @@ const HomePageBlock = styled.div <{margin: string}>`
 `
 
 const MainTextBlock = styled.div`
-    width: 600px;
+    width: 580px;
     margin-right: 20px;
     @media (max-width: 720px) {
         width: 90%;
@@ -27,7 +27,7 @@ const MainTextBlock = styled.div`
 `
 
 const MainText = styled.a`
-    font-size: 70px;
+    font-size: 65px;
     @media (max-width: 500px) {
         font-size: 50px;
     } 
@@ -39,7 +39,7 @@ const BlueText = styled.a`
 
 const GreyText = styled.h2`
     width: 90%;
-    font-size: 30px;
+    font-size: 25px;
     color: #BABABA;
     margin-top: 20px;
     @media (max-width: 500px) {

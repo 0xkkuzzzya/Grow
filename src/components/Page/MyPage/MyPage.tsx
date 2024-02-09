@@ -7,8 +7,12 @@ const MyPageBlock = styled.div`
 `
 
 const MyPageContainer = styled.div`
-    max-width: 700px;
+    max-width: 570px;
     margin: 0 auto;
+    @media (max-width: 570px) {
+        padding: 0 20px;
+        max-width: 500px;
+    }
 `
 
 const HeaderBlock = styled.div`
@@ -22,9 +26,12 @@ const BalanceBlock = styled.div`
 const BalanceText = styled.h1`
     margin-top: 20px;
     margin-bottom: 30px;
-    font-size: 70px;
+    font-size: 65px;
     display: flex;
     align-items: center;
+    @media (max-width: 570px) {
+        font-size: 60px;
+    }
 `
 
 const BalanceImg = styled.img`
@@ -43,6 +50,7 @@ const DynamicBlock = styled.div`
 const ContainerBlock = styled.div`
     
 `
+
 
 
 export const MyPage = () => {

@@ -4,7 +4,7 @@ import { TokenFieldBorrow } from "./TokenFieldBorrow/TokenFieldBorrow";
 const DepositBlock = styled.div`
     width: 100%;
     height: 100px;
-    margin-top: 30px;
+    margin-top: 10px;
 `
 
 const InfoBlock = styled.div`
