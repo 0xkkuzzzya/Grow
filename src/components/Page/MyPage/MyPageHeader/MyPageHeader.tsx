@@ -12,6 +12,7 @@ const HeaderBlock = styled.div`
 const ButtonBlock = styled.div`
     display: flex;
     align-items: center;
+    
 `
 
 const ButtonLink = styled.button`
@@ -23,6 +24,9 @@ const ButtonLink = styled.button`
     font-weight: 700;
     outline: none;
     font-family: 'Inter', sans-serif;
+    @media (max-width: 500px) {
+        font-size: 25px;
+    }
 `
 
 const DynamicUndeBlock = styled.div`

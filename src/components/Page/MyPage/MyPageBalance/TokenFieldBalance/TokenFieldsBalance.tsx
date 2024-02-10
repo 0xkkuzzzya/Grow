@@ -74,7 +74,7 @@ const SecondAmountText = styled.a`
 `
 
 
-export const TokenFieldBalance = () => {
+export const TokenFieldBalanceDesktop = () => {
     return(
         <FieldArr>
             <FieldBlock>
@@ -117,6 +117,45 @@ export const TokenFieldBalance = () => {
                 <PriceText style={{marginLeft: "-6px"}}>1.16 USQ</PriceText>
             </PriceBlock>
             <AmountBlock>
+                <MainAmountText>10 USQ</MainAmountText>
+                <SecondAmountText>8.62 gUSQ</SecondAmountText>
+            </AmountBlock>    
+            </FieldBlock>         
+        </FieldArr>
+    )
+}
+
+export const TokenFieldBalanceMobile = () => {
+    return(
+        <FieldArr>
+            <FieldBlock>
+            <TokenImg src={USQLogo}></TokenImg>
+            <TokenName>USQ</TokenName>
+            <AmountBlock style={{marginLeft: "auto"}}>
+                <MainAmountText>210 USQ</MainAmountText>
+                <SecondAmountText>210 USQ</SecondAmountText>
+            </AmountBlock>
+            </FieldBlock>
+            <FieldBlock>
+            <TokenImg src={ATOMLogo}></TokenImg>
+            <TokenName>ATOM</TokenName>
+            <AmountBlock style={{marginLeft: "auto"}}>
+                <MainAmountText>190 USQ</MainAmountText>
+                <SecondAmountText>20.8 ATOM</SecondAmountText>
+            </AmountBlock>
+            </FieldBlock>
+            <FieldBlock>
+            <TokenImg src={WBTCLogo}></TokenImg>
+            <TokenName>WBTC</TokenName>
+            <AmountBlock style={{marginLeft: "auto"}}>
+                <MainAmountText>120 USQ</MainAmountText>
+                <SecondAmountText>20.0027 WBTC</SecondAmountText>
+            </AmountBlock>
+            </FieldBlock>
+            <FieldBlock>
+            <TokenImg src={GUSQLogo}></TokenImg>
+            <TokenName>gUSQ</TokenName>
+            <AmountBlock style={{marginLeft: "auto"}}>
                 <MainAmountText>10 USQ</MainAmountText>
                 <SecondAmountText>8.62 gUSQ</SecondAmountText>
             </AmountBlock>    

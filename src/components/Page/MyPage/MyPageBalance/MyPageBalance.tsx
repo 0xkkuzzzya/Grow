@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { TokenFieldBalance } from "./TokenFieldBalance/TokenFieldsBalance";
+import { useMediaQuery } from 'react-responsive'
+import { TokenFieldBalanceDesktop, TokenFieldBalanceMobile } from "./TokenFieldBalance/TokenFieldsBalance";
 
 const BalanceBlock = styled.div`
     width: 100%;
@@ -9,6 +10,7 @@ const BalanceBlock = styled.div`
 const InfoBlock = styled.div`
     display: flex;
     align-items: center;
+    
 `
 
 const AssetsBlock = styled.div`
@@ -28,6 +30,9 @@ const PriceBlock = styled.div`
 
 const AmountBlock = styled.div`
     margin-right: 20px;
+    @media (max-width: 500px) {
+        margin-left: auto;
+    }
 `
 
 const ContainerBlock = styled.div`
@@ -40,14 +45,24 @@ const ContainerBlock = styled.div`
 
 
 export const MyPageBalance = () => {
+
+    const isDes = useMediaQuery({
+        query: "(min-device-width: 500px)",
+    });
+    const isMob = useMediaQuery({
+        query: "(max-device-width: 500px)",
+    });
+
     return(
         <BalanceBlock>
             <InfoBlock>
                 <AssetsBlock> <Text>Assets</Text> </AssetsBlock>
-                <PriceBlock> <Text>Price(USQ)</Text> </PriceBlock>
+                {isDes && <PriceBlock> <Text>Price(USQ)</Text> </PriceBlock>}
+                {isMob && <></>}
                 <AmountBlock> <Text>Amount</Text> </AmountBlock>
             </InfoBlock>
-            <TokenFieldBalance></TokenFieldBalance>
+            {isDes && <TokenFieldBalanceDesktop/>}
+            {isMob && <TokenFieldBalanceMobile/>}
             {/* <ContainerBlock >
                 <h1 style={{fontSize: "27px"}}>No tokens</h1>
                 <h3 style={{marginTop: "-15px"}}>Looks like you dont have any tokens yet.</h3>
