@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { TokenFieldBorrow } from "./TokenFieldBorrow/TokenFieldBorrow";
+import { useMediaQuery } from "react-responsive";
 
 const DepositBlock = styled.div`
     width: 100%;
@@ -10,6 +11,7 @@ const DepositBlock = styled.div`
 const InfoBlock = styled.div`
     display: flex;
     align-items: center;
+    justify-content: space-between;
 `
 
 const AssetsBlock = styled.div`
@@ -23,22 +25,25 @@ const Text = styled.a`
 `
 
 const PriceBlock = styled.div`
-    margin-left: auto;
-    margin-right: auto;
+    margin-right: 15px;
 `
 
-const AmountBlock = styled.div`
-    margin-right: 20px;
-`
-
-
+ 
 export const MyPageBorrow = () => {
+
+    const isDes = useMediaQuery({
+        query: "(min-device-width: 570px)",
+    });
+    const isMob = useMediaQuery({
+        query: "(max-device-width: 570px)",
+    });
+
     return(
         <DepositBlock>
              <InfoBlock>
-                <AssetsBlock> <Text>Assets</Text> </AssetsBlock>
-                <PriceBlock> <Text>Amount(USQ)</Text> </PriceBlock>
-                <AmountBlock style={{width: "90px"}}> <Text><br></br></Text> </AmountBlock>
+             <AssetsBlock> <Text>Assets</Text> </AssetsBlock>
+                {isMob && <PriceBlock> <Text>Amount(USQ)</Text> </PriceBlock>}
+                {isDes && <PriceBlock> <Text style={{marginLeft: "-22.8em"}}>Amount(USQ)</Text> </PriceBlock>}
             </InfoBlock>
             <TokenFieldBorrow/>
         </DepositBlock>

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { TokenFieldDeposit } from "./TokenFieldDeposit/TokenFieldDeposit";
+import { useMediaQuery } from "react-responsive";
 
 const DepositBlock = styled.div`
     width: 100%;
@@ -10,6 +11,7 @@ const DepositBlock = styled.div`
 const InfoBlock = styled.div`
     display: flex;
     align-items: center;
+    justify-content: space-between;
 `
 
 const AssetsBlock = styled.div`
@@ -23,8 +25,7 @@ const Text = styled.a`
 `
 
 const PriceBlock = styled.div`
-    margin-left: auto;
-    margin-right: auto;
+    margin-right: 15px;
 `
 
 const AmountBlock = styled.div`
@@ -33,12 +34,20 @@ const AmountBlock = styled.div`
 
 
 export const MyPageDeposit = () => {
+
+    const isDes = useMediaQuery({
+        query: "(min-device-width: 570px)",
+    });
+    const isMob = useMediaQuery({
+        query: "(max-device-width: 570px)",
+    });
+    
     return(
         <DepositBlock>
              <InfoBlock>
                 <AssetsBlock> <Text>Assets</Text> </AssetsBlock>
-                <PriceBlock> <Text style={{marginLeft: "-11.5em"}}>Amount(USQ)</Text> </PriceBlock>
-                <AmountBlock> <Text><br></br></Text> </AmountBlock>
+                {isMob && <PriceBlock> <Text>Amount(USQ)</Text> </PriceBlock>}
+                {isDes && <PriceBlock> <Text style={{marginLeft: "-27.5em"}}>Amount(USQ)</Text> </PriceBlock>}
             </InfoBlock>
             <TokenFieldDeposit/>
         </DepositBlock>

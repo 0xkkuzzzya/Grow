@@ -12,7 +12,9 @@ const HeaderBlock = styled.div`
 const ButtonBlock = styled.div`
     display: flex;
     align-items: center;
-    
+    @media (max-width: 570px) {
+        justify-content: space-around;
+    }
 `
 
 const ButtonLink = styled.button`
@@ -24,8 +26,13 @@ const ButtonLink = styled.button`
     font-weight: 700;
     outline: none;
     font-family: 'Inter', sans-serif;
+    margin-left: 20px;
     @media (max-width: 500px) {
         font-size: 25px;
+    }
+    @media (max-width: 400px) {
+        font-size: 20px;
+        margin-left: 0;
     }
 `
 
@@ -49,19 +56,19 @@ export const MyPageHeader = () => {
             <ButtonBlock>
                 <ButtonLink 
                 onClick={() => {setBlock('Balance')}}
-                style={{
+                style={{marginLeft: "0",
                     color: block == 'Balance' ? 'black' : greyText,
                     textDecoration: block == 'Balance' ? underline : ''
                 }}>Balance</ButtonLink>
                 <ButtonLink 
                 onClick={() => {setBlock('Deposit')}} 
-                style={{marginLeft: "20px",
+                style={{
                     color: block == 'Deposit' ? 'black' : greyText,
                     textDecoration: block == 'Deposit' ? underline : ''
                 }}>Deposit</ButtonLink>
                 <ButtonLink 
                 onClick={() => {setBlock('Borrow')}} 
-                style={{marginLeft: "20px",
+                style={{
                     color: block == 'Borrow' ? 'black' : greyText,
                     textDecoration: block == 'Borrow' ? underline : ''
                 }}>Borrow</ButtonLink>

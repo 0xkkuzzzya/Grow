@@ -4,6 +4,7 @@ import ATOMLogo from '../../../../../assets/svg/AtomLogo.svg'
 import WBTCLogo from '../../../../../assets/svg/WBTCLogo.svg'
 import GUSQLogo from '../../../../../assets/svg/GUSQLogo.svg'
 import { EarnCastomLink } from "../../../Earn/EarnCastomLink/EarnCastomLink";
+import { useMediaQuery } from "react-responsive";
 
 const FieldArrS = styled.div`
     overflow: auto;
@@ -36,8 +37,6 @@ const TokenImg = styled.img`
 
 const PriceBlock = styled.div`
     margin-left: auto;
-    margin-right: auto;
-    width: 100px;
     white-space: nowrap;
     text-align: left;
 `
@@ -62,7 +61,7 @@ const ButtonsBlock = styled.div`
     margin-right: 15px;
 `
 
-const EarnDepositButton = styled.button `
+const EarnDepositButton = styled.button`
     width: 130px;
     height: 100%;
     color: white;
@@ -96,22 +95,32 @@ const EarnWithdrawalButton = styled.button`
 
 
 export const TokenFieldDeposit = () => {
-    return(
+
+    const isDes = useMediaQuery({
+        query: "(min-device-width: 570px)",
+    });
+    const isMob = useMediaQuery({
+        query: "(max-device-width: 570px)",
+    });
+
+    var button = <ButtonsBlock>
+                    <EarnCastomLink to="/deposit">
+                        <EarnDepositButton>Deposit</EarnDepositButton>
+                    </EarnCastomLink>
+                    <EarnCastomLink to="/withdrawal">
+                        <EarnWithdrawalButton>Withdrawal</EarnWithdrawalButton>
+                    </EarnCastomLink>
+                </ButtonsBlock>
+
+    return (
         <FieldArr>
             <FieldBlock>
-            <TokenImg src={USQLogo}></TokenImg>
-            <TokenName>USQ</TokenName>
-            <PriceBlock>
-                <PriceText>1 USQ</PriceText>
-            </PriceBlock>
-            <ButtonsBlock >
-                <EarnCastomLink to="/deposit">
-                    <EarnDepositButton>Deposit</EarnDepositButton>
-                </EarnCastomLink>
-                <EarnCastomLink to="/withdrawal">
-                    <EarnWithdrawalButton>Withdrawal</EarnWithdrawalButton>
-                </EarnCastomLink>
-            </ButtonsBlock>
+                <TokenImg src={USQLogo}></TokenImg>
+                <TokenName>USQ</TokenName>
+                {isDes && <PriceBlock style={{marginRight: "auto"}}> <PriceText>1 USQ</PriceText> </PriceBlock>}
+                {isMob && <PriceBlock style={{marginRight: "15px"}}> <PriceText>1 USQ</PriceText> </PriceBlock>}
+                {isDes && button}
+                {isMob && <></>}
             </FieldBlock>
         </FieldArr>
     )
