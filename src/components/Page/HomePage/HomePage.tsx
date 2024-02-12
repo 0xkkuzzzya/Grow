@@ -21,6 +21,7 @@ const HomePageBlock = styled.div <{margin: string}>`
 const MainTextBlock = styled.div`
     width: 580px;
     margin-right: 20px;
+    line-height:1;
     @media (max-width: 720px) {
         width: 90%;
     }
@@ -44,7 +45,7 @@ const GreyText = styled.h2`
     margin-top: 20px;
     @media (max-width: 500px) {
         font-size: 18px;
-        margin-top: 40px;
+        margin-top: 20px;
     } 
 `
 
