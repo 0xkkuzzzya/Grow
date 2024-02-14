@@ -7,6 +7,7 @@ import { useConnectKeplrWalletStore } from '../../../hooks/useConnectKeplrWallet
 import { useWallet } from '../../../hooks/useWallet';
 import { useShowWalletModal } from '../../../hooks/useShowModal';
 import { useColorConnect } from '../../../hooks/useColorConnect';
+import { useToggleTheme } from '../../../hooks/useToggleTheme';
 
 const ModalDialogOverlay = animated(DialogOverlay);
 const StyledDialogOvelay = styled(ModalDialogOverlay) `
@@ -26,7 +27,7 @@ const StyledDialogOvelay = styled(ModalDialogOverlay) `
     }
 `
 
-const CloseButton = styled.button`
+const CloseButton = styled.button <{TextColor: string}>`
     width: 25px;
     height: 25px;
     font-size: 30px;
@@ -34,15 +35,9 @@ const CloseButton = styled.button`
     margin-top: 10px;
     background-color: transparent;
     border: none;
-    color: black;
+    color: ${props => props.TextColor};
     margin-left: auto;
     outline: none;
-`
-
-const CloseButtonBlock = styled.div`
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
 `
 
 const OpenButton = styled.button <{color: string, border: string, margin: string}>`
@@ -102,9 +97,9 @@ const ConnectBlock = styled.div`
     align-items: center;
 `
 
-const HeaderText = styled.a`
+const HeaderText = styled.a <{TextColor: string}>`
     font-size: 20px;
-    color: black;
+    color: ${props => props.TextColor};
     white-space: nowrap;
 `
 
@@ -118,15 +113,15 @@ const HeaderBlock = styled.div`
 
 
 const ModalDialogContent = animated(DialogContent);
-const StyledDialogContent = styled(ModalDialogContent)`
+const StyledDialogContent = styled(ModalDialogContent) <{modalBgColor: string, modalBorder: string}>`
     &[data-reach-dialog-content] {
-        background-color: rgb(245,245,245);
+        background-color: ${props => props.modalBgColor};
         width: 375px;
         height: 600px;
         display: flex;
         flex-direction: column;
         border-radius: 20px;
-        border: 2px solid #dbdbdb;
+        border:  ${props => props.modalBorder};
         margin-top: -10px;
         position: relative;
         outline: none;
@@ -152,6 +147,7 @@ export const ConnectModal = () => {
     const [ connectWallet, setConnectKeplrWalletStore ] = useConnectKeplrWalletStore();
     const [ wallet, setWallet ] = useWallet();
     const [ walletModalStatus, setWalletModalStatus] = useShowWalletModal();
+    const [theme, setTheme] = useToggleTheme()
 
     const disconnect = () => {
         setWallet({
@@ -180,12 +176,12 @@ export const ConnectModal = () => {
             {walletAddr == "" || undefined ? "Connect Wallet" : <ConnectBlock>  <LogoKeplr src={KeplrLogo}/>  {walletAddr} </ConnectBlock>}
         </OpenButton>
         <StyledDialogOvelay isOpen={walletModalStatus.b && !connectWallet.connected} onDismiss={close}>
-            <StyledDialogContent>
+            <StyledDialogContent modalBgColor={theme.modalBgColor} modalBorder={theme.modalBorder}>
                 <CloseDiv>
                     <HeaderBlock>
-                        <HeaderText>Connect Wallet</HeaderText>
+                        <HeaderText TextColor={theme.TextColor}>Connect Wallet</HeaderText>
                     </HeaderBlock>              
-                        <CloseButton >
+                        <CloseButton TextColor={theme.TextColor}>
                             <a style={{cursor: "pointer"}} onClick={close} aria-hidden>×</a>
                         </CloseButton>
                 </CloseDiv>

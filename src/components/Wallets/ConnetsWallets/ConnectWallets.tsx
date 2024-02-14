@@ -15,6 +15,7 @@ import ArrowLeft from '../../../assets/svg/ArrowLeft.svg'
 import ArrowRight from '../../../assets/svg/ArrowRight.svg'
 import { WalletStatements, useWalletModal } from '../../../hooks/useWalletModal'
 import KeplrLogo from '../../../assets/svg/Keplr.svg'
+import { useToggleTheme } from '../../../hooks/useToggleTheme'
 
 const ArrWallets = styled.div`
     width: 100%;
@@ -35,14 +36,14 @@ const WalletList = styled.div`
     align-items: center;
 `
 
-const WalletFields = styled.button`
+const WalletFields = styled.button <{TextColor: string, walletHover: string}>`
     max-width: 100%;
     border: none;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: black;
+    color: ${props => props.TextColor};
     cursor: pointer;
     outline:none;
     margin-top: 20px;
@@ -52,7 +53,7 @@ const WalletFields = styled.button`
     background: transparent;
     padding: 5px;
     &:hover {
-        background: #ECECEC;
+        background: ${props => props.walletHover};
     }
 `
 
@@ -66,10 +67,10 @@ const WalletName = styled.h1`
     font-size: 15px;
 `
 
-const WalletInfoBlock = styled.div`
+const WalletInfoBlock = styled.div <{connectModalContainer: string}>`
     width: 100%;
     height: 100%;
-    background: #eeeeee;
+    background: ${props => props.connectModalContainer};
     margin-top: 10px;
     border-radius: 17px;
     display: flex;
@@ -82,19 +83,20 @@ const ContentInfoBlock = styled.div`
     align-items: center;
 `
 
-const WalletBlock = styled.div`
+const WalletBlock = styled.div <{walletBg: string}>`
     max-width: 100%;
     max-height: 100%;
     padding: 20px;
-    background: #D9D9D9;
+    background: ${props => props.walletBg};
     border-radius: 30px;
     margin-top: 30px;
     cursor: pointer;
 `
 
-const ConnectText = styled.h1`
+const ConnectText = styled.h1 <{TextColor: string}>`
     font-size: 18px;
     margin-top: 20px;
+    color: ${props => props.TextColor};
 `
 
 const InfoLogoWallet = styled.img`
@@ -105,20 +107,11 @@ const WalletTextBlock = styled.div`
     max-width: 300px;
 `
 
-const WalletText = styled.h1`
+const WalletText = styled.h1 <{TextColor: string}>`
     font-size: 16px;
-    color: black;
+    color: ${props => props.TextColor};
     margin-top: 20px;
     text-align: center;
-`
-
-const ArrowLogo = styled.img`
-    width: 30px;
-    height: 30px;
-    margin-top: 40px;
-    margin-left: 10px;
-    margin-right: 10px;
-    cursor: pointer;
 `
 
 const WalletConnectBlock = styled.div`
@@ -136,6 +129,7 @@ export const ConnectWallets = () => {
     const [alertStore, setAlertStore] = useAlertStore();
     const [showAlerts, setShowAlerts] = useShowAlert();
     const [walletModal, setWalletModal] = useWalletModal();
+    const [theme, setTheme] = useToggleTheme()
     
     let ConnectKeplrHandler = async () => {
         let [connected, walletKeplr, alert] = await ConnectKeplr();
@@ -160,29 +154,29 @@ export const ConnectWallets = () => {
     return(
         <ArrWallets>
             <WalletList>
-                <WalletFields onClick={ () => {setWalletModal(WalletStatements[0])}}>
+                <WalletFields TextColor={theme.TextColor} walletHover={theme.walletHover} onClick={ () => {setWalletModal(WalletStatements[0])}}>
                     <WalletLogo src={keplr}></WalletLogo>
                     <WalletName>Keplr Wallet</WalletName>
                 </WalletFields>
-                <WalletFields onClick={ () => {setWalletModal(WalletStatements[1])}}>
+                <WalletFields TextColor={theme.TextColor} walletHover={theme.walletHover} onClick={ () => {setWalletModal(WalletStatements[1])}}>
                     <WalletLogo src={leap}></WalletLogo>
                     <WalletName>Leap Wallet</WalletName>
                 </WalletFields>
-                <WalletFields onClick={ () => {setWalletModal(WalletStatements[2])}}>
+                <WalletFields TextColor={theme.TextColor} walletHover={theme.walletHover} onClick={ () => {setWalletModal(WalletStatements[2])}}>
                     <WalletLogo src={qube}></WalletLogo>
                     <WalletName>Qube Wallet</WalletName>
                 </WalletFields>
             </WalletList>
-            <WalletInfoBlock>
+            <WalletInfoBlock connectModalContainer={theme.connectModalContainer}>
                 <ContentInfoBlock>
-                    <ConnectText>Getting started with {walletModal.name}</ConnectText>
+                    <ConnectText TextColor={theme.TextColor}>Getting started with {walletModal.name}</ConnectText>
                     <WalletConnectBlock>
-                        <WalletBlock onClick={ConnectKeplrHandler}> 
+                        <WalletBlock walletBg={theme.walletBg} onClick={ConnectKeplrHandler}> 
                             <InfoLogoWallet src={walletModal.logo}></InfoLogoWallet>
                         </WalletBlock>
                     </WalletConnectBlock>
                     <WalletTextBlock>
-                        <WalletText>
+                        <WalletText TextColor={theme.TextColor}>
                             {walletModal.text}
                         </WalletText>
                     </WalletTextBlock>

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { EarnButton } from "../../Buttton/HomePageButtons/EarnButton/EarnButton";
 import { BorrowButton } from "../../Buttton/HomePageButtons/BorrowButton/BorrowButton";
 import { useAccordionStore } from "../../../hooks/useAccordionStore";
+import { useToggleTheme } from "../../../hooks/useToggleTheme";
 
 const HomePageBlock = styled.div <{margin: string}>`
     width: 100%;
@@ -18,6 +19,14 @@ const HomePageBlock = styled.div <{margin: string}>`
     }
 `
 
+const Block = styled.div <{backgroundColor: string}>`
+    width: 100%;
+    height: 93.3vh;
+    background: ${props => props.backgroundColor};
+    margin-top: -5px;
+`
+
+
 const MainTextBlock = styled.div`
     width: 580px;
     margin-right: 20px;
@@ -27,8 +36,9 @@ const MainTextBlock = styled.div`
     }
 `
 
-const MainText = styled.a`
+const MainText = styled.a <{TextColor: string}>`
     font-size: 65px;
+    color: ${props => props.TextColor};
     @media (max-width: 500px) {
         font-size: 50px;
     } 
@@ -38,10 +48,10 @@ const BlueText = styled.a`
     color: #6CBBFF;
 `
 
-const GreyText = styled.h2`
+const GreyText = styled.h2 <{homePageGreyText: string}>`
     width: 90%;
     font-size: 25px;
-    color: #BABABA;
+    color: ${props => props.homePageGreyText};
     margin-top: 20px;
     @media (max-width: 500px) {
         font-size: 18px;
@@ -63,25 +73,28 @@ const ButtonBlock = styled.div`
 export const HomePage = () => {
 
     const [accordion, setAccordion] = useAccordionStore()
+    const [theme, setTheme] = useToggleTheme()
 
     return(
-        <HomePageBlock margin={accordion.margin}>
-            <MainTextBlock>
-                <MainText>
-                    <BlueText>Save</BlueText>, <BlueText>borrow</BlueText> and 
-                    <BlueText> earn</BlueText> crypto
-                    assets with Qube
-                    Grow.
-                </MainText>
-                <GreyText>Simply lend & borrow crypto. Provide
-                        liquidity to Qube Grow savings protocol
-                        and earn rewards on your digital assets.
-                </GreyText>
-            </MainTextBlock>
-            <ButtonBlock>
-                <EarnButton/>
-                <BorrowButton/>
-            </ButtonBlock>
-        </HomePageBlock>
+        <Block backgroundColor={theme.backgroundColor}>
+            <HomePageBlock margin={accordion.margin}>
+                <MainTextBlock>
+                    <MainText TextColor={theme.TextColor}>
+                        <BlueText>Save</BlueText>, <BlueText>borrow</BlueText> and 
+                        <BlueText> earn</BlueText> crypto
+                        assets with Qube
+                        Grow.
+                    </MainText>
+                    <GreyText homePageGreyText={theme.homePageGreyText}>Simply lend & borrow crypto. Provide
+                            liquidity to Qube Grow savings protocol
+                            and earn rewards on your digital assets.
+                    </GreyText>
+                </MainTextBlock>
+                <ButtonBlock>
+                    <EarnButton/>
+                    <BorrowButton/>
+                </ButtonBlock>
+            </HomePageBlock>
+        </Block>
     )
 }

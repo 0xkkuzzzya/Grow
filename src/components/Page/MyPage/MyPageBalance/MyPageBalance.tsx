@@ -1,11 +1,13 @@
 import styled from "styled-components";
 import { useMediaQuery } from 'react-responsive'
 import { TokenFieldBalanceDesktop, TokenFieldBalanceMobile } from "./TokenFieldBalance/TokenFieldsBalance";
+import { useToggleTheme } from "../../../../hooks/useToggleTheme";
 
 const BalanceBlock = styled.div`
     width: 100%;
     margin-top: 10px;
 `
+
 
 const InfoBlock = styled.div`
     display: flex;
@@ -35,16 +37,11 @@ const AmountBlock = styled.div`
     }
 `
 
-const ContainerBlock = styled.div`
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-`
 
 
 export const MyPageBalance = () => {
+    
+    const [theme, setTheme] = useToggleTheme()
 
     const isDes = useMediaQuery({
         query: "(min-device-width: 500px)",

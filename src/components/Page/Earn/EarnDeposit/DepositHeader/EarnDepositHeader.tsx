@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { EarnCastomLink } from "../../EarnCastomLink/EarnCastomLink";
 import ArrowEarn from '../../../../../assets/svg/ArrowEarn.svg'
+import { useToggleTheme } from "../../../../../hooks/useToggleTheme";
 
 const HeaderBlock = styled.div`
     width: 80%;
@@ -16,9 +17,10 @@ const ButtonBack = styled.a`
     color: #BABABA;
 `
 
-const HeaderText = styled.h1`
+const HeaderText = styled.h1 <{TextColor: string}>`
     font-size: 30px;
     margin-top: 10px;
+    color: ${props => props.TextColor};
 `
 
 const ArrowLogo = styled.img`
@@ -30,13 +32,16 @@ const ArrowLogo = styled.img`
 
 
 export const EarnDepositHeader = () => {
+
+    const [theme, setTheme] = useToggleTheme()
+
     return(
         <HeaderBlock>
             <EarnCastomLink to="/earn">
             <ArrowLogo src={ArrowEarn}></ArrowLogo>
                 <ButtonBack>Back</ButtonBack>
             </EarnCastomLink>
-            <HeaderText>Deposit USQ</HeaderText>
+            <HeaderText TextColor={theme.TextColor}>Deposit USQ</HeaderText>
         </HeaderBlock>
     )
 }

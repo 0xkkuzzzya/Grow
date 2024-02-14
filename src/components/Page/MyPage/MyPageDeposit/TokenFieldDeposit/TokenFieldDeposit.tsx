@@ -5,6 +5,7 @@ import WBTCLogo from '../../../../../assets/svg/WBTCLogo.svg'
 import GUSQLogo from '../../../../../assets/svg/GUSQLogo.svg'
 import { EarnCastomLink } from "../../../Earn/EarnCastomLink/EarnCastomLink";
 import { useMediaQuery } from "react-responsive";
+import { useToggleTheme } from "../../../../../hooks/useToggleTheme";
 
 const FieldArrS = styled.div`
     overflow: auto;
@@ -18,14 +19,14 @@ const FieldArr = styled.div`
     overflow: visible;
 `
 
-const FieldBlock = styled.div`
+const FieldBlock = styled.div <{BorderField: string}>`
     width: 99%;
     height: 60px;
     border: 2px solid red;
     border-radius: 17px;
     margin-top: 10px;
     font-family: 'Inter', sans-serif;
-    border: 2px solid #eee;
+    border: ${props => props.BorderField};
     display: flex;
     align-items: center;
 `
@@ -35,10 +36,11 @@ const TokenImg = styled.img`
     margin-left: 15px;
 `
 
-const PriceBlock = styled.div`
+const PriceBlock = styled.div <{TextColor: string}>`
     margin-left: auto;
     white-space: nowrap;
     text-align: left;
+    color: ${props => props.TextColor};
 `
 
 const PriceText = styled.a`
@@ -47,10 +49,11 @@ const PriceText = styled.a`
     text-align: left;
 `
 
-const TokenName = styled.a`
+const TokenName = styled.a <{TextColor: string}>`
     font-size: 20px;
     font-weight: 700;
     margin-left: 10px;
+    color: ${props => props.TextColor};
 `
 
 const ButtonsBlock = styled.div`
@@ -96,6 +99,8 @@ const EarnWithdrawalButton = styled.button`
 
 export const TokenFieldDeposit = () => {
 
+    const [theme, setTheme] = useToggleTheme()
+
     const isDes = useMediaQuery({
         query: "(min-device-width: 570px)",
     });
@@ -114,11 +119,11 @@ export const TokenFieldDeposit = () => {
 
     return (
         <FieldArr>
-            <FieldBlock>
+            <FieldBlock BorderField={theme.BorderField}>
                 <TokenImg src={USQLogo}></TokenImg>
-                <TokenName>USQ</TokenName>
-                {isDes && <PriceBlock style={{marginRight: "auto"}}> <PriceText>1 USQ</PriceText> </PriceBlock>}
-                {isMob && <PriceBlock style={{marginRight: "15px"}}> <PriceText>1 USQ</PriceText> </PriceBlock>}
+                <TokenName TextColor={theme.TextColor}>USQ</TokenName>
+                {isDes && <PriceBlock TextColor={theme.TextColor} style={{marginRight: "auto"}}> <PriceText>1 USQ</PriceText> </PriceBlock>}
+                {isMob && <PriceBlock TextColor={theme.TextColor} style={{marginRight: "15px"}}> <PriceText>1 USQ</PriceText> </PriceBlock>}
                 {isDes && button}
                 {isMob && <></>}
             </FieldBlock>

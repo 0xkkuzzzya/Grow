@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import { DialogContent, DialogOverlay } from '@reach/dialog';
 import { animated } from '@react-spring/web';
-import { useShowWalletModal } from "../../../../hooks/useStoreModal";
 import CosmosLogo from '../../../../assets/svg/CosmosLogo.svg'
 import ArrowBlack from '../../../../assets/svg/ArrowBlack.svg'
+import ArrowWhite from '../../../../assets/svg/ArrowWhite.svg'
 import { useShowModalFrom } from "../../../../hooks/useShowModal";
+import { useToggleTheme } from "../../../../hooks/useToggleTheme";
 
 const ModalDialogOverlay = animated(DialogOverlay);
 const StyledDialogOvelay = styled(ModalDialogOverlay) `
@@ -28,7 +29,7 @@ const ModalBlock = styled.div`
     align-items: center;
 `
 
-const CloseButton = styled.button`
+const CloseButton = styled.button <{TextColor: string}>`
     width: 25px;
     height: 25px;
     font-size: 30px;
@@ -37,12 +38,12 @@ const CloseButton = styled.button`
     background-color: transparent;
     border: none;
     cursor: pointer;
-    color: black;
+    color: ${props => props.TextColor};
     margin-left: auto;
     outline: none;
 `
 
-const OpenButton = styled.button`
+const OpenButton = styled.button <{TextColor: string}>`
     max-width:100%;
     background:transparent;
     border:none;
@@ -57,19 +58,20 @@ const OpenButton = styled.button`
     margin-left: 20px;
     display: flex;
     align-items: center;
-    color: black;
+    color: ${props => props.TextColor};
 `
 
 const CloseButtonBlock = styled.div`
     width: 100%;
     display: flex;
     justify-content: flex-end;
+    
 `
 
-const ModalText = styled.h4 `
+const ModalText = styled.h4 <{TextColor: string}>`
     margin-left: 26px;
     font-size: 20px;
-    color: black;
+    color: ${props => props.TextColor};
 `
 
 const ModalTextBlock = styled.div`
@@ -103,24 +105,27 @@ const Logo = styled.img`
     margin-right: 10px;
 `
 
-const Arrow = styled.img`
+const Arrow = styled.svg <{ArrrowColor: string}>`
     width: 13px;
     height: 13px;
     margin-top: -5px;
     margin-left: 5px;
+    background: url(${props => props.ArrrowColor});
+    background-repeat: no-repeat;
+    background-size: contain;
 `
 
 
 const ModalDialogContent = animated(DialogContent);
-const StyledDialogContent = styled(ModalDialogContent)`
+const StyledDialogContent = styled(ModalDialogContent) <{modalBgColor: string, modalBorder: string}>`
     &[data-reach-dialog-content] {
-        background-color: rgb(245,245,245);
+        background-color: ${props => props.modalBgColor};
         width: 400px;
         height: 500px;
         display: flex;
         flex-direction: column;
         border-radius: 20px;
-        border: 2px solid #dbdbdb;
+        border: ${props => props.modalBorder};
         margin-top: -10px;
         position: relative;
         outline: none;
@@ -138,25 +143,26 @@ const StyledDialogContent = styled(ModalDialogContent)`
 export const ModalWont = () => {
 
     const [ walletModalStatus, setWalletModalStatus ] = useShowModalFrom();
+    const [theme, setTheme] = useToggleTheme()
 
     const open = () => {setWalletModalStatus({b: true})};
     const close = () => {setWalletModalStatus({b: false})};
 
     return (
       <ModalBlock>
-        <OpenButton onClick={open}>
+        <OpenButton TextColor={theme.TextColor} onClick={open}>
         <Logo src={CosmosLogo}></Logo>
            ATOM
-        <Arrow src={ArrowBlack}></Arrow>
+        <Arrow ArrrowColor={theme.active == true ? ArrowWhite : ArrowBlack}></Arrow>
             </OpenButton>
         <StyledDialogOvelay isOpen={walletModalStatus.b}  onDismiss={close}>
-            <StyledDialogContent>
+            <StyledDialogContent modalBgColor={theme.modalBgColor} modalBorder={theme.modalBorder}>
                 <CloseDiv>
                     <ModalTextBlock>
-                        <ModalText>Select a token</ModalText>
+                        <ModalText TextColor={theme.TextColor}>Select a token</ModalText>
                     </ModalTextBlock>
                     <CloseButtonBlock>
-                        <CloseButton onClick={close}>
+                        <CloseButton TextColor={theme.TextColor} onClick={close}>
                         <span aria-hidden>×</span>
                         </CloseButton>
                     </CloseButtonBlock>

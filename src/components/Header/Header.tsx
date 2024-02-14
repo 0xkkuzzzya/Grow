@@ -5,13 +5,16 @@ import { ConnectButton } from "../Buttton/ConnectButton/CoonectButton";
 import { DefoultLinkBlock, MobileLinkBlock } from "./VariablesLink/BlockLink";
 import { useMediaQuery } from 'react-responsive'
 import { LinkButton } from '../Buttton/LinkButton/LinkButton';
+import { ChangeTheme } from "../Buttton/ToggleTheme/ChangeTheme";
+import { useToggleTheme } from "../../hooks/useToggleTheme";
 
-const MainHeader = styled.div`
+
+const MainHeader = styled.div <{headerColor: string}>`
     max-width: 100%;
     height: 70px;
     display: flex;
     align-items: center;
-    background: #ECEBEB;
+    background: ${props => props.headerColor};
 `
 
 const HeaderLogoBlock = styled.div`
@@ -33,34 +36,14 @@ const HeaderLogoQUBE = styled.img`
 `
 
 
-const LinkText = styled.button`
-    width: 100%;
-    background: transparent;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    font-weight: 600;
-    padding: 0;
-    color: black;
-    text-decoration: none;
-`
 
-const LinkFlex = styled.div`
-    display: flex;
-    align-items: center;
-`
 
-const Test = styled.div`
-    width: 100px;
-    flex-grow: 1;
-    @media (min-width: 730px){
-        flex-grow: 0;
-        display: flex;
-    }
-`
 
 
 export const Header = () => {
+
+    const [theme, setTheme] = useToggleTheme()
+
     const isDes = useMediaQuery({
         query: "(min-device-width: 950px)",
     });
@@ -71,7 +54,7 @@ export const Header = () => {
     return(
         <div>
             
-            <MainHeader>
+            <MainHeader headerColor={theme.headerColor}>
                 <HeaderLogoBlock>
                     <Castomlink to="/">
                         <HeaderLogoQUBE src={QubeLogo}></HeaderLogoQUBE>
@@ -80,6 +63,7 @@ export const Header = () => {
                 <LinkButton></LinkButton>
                     {isDes && <DefoultLinkBlock/>}
                 <ConnectButton></ConnectButton>
+                <ChangeTheme/>
             </MainHeader>
             {isMob && <MobileLinkBlock/>}
         </div>

@@ -8,6 +8,8 @@ import { Routes, Route } from 'react-router-dom';
 import { HomePage } from './components/Page/HomePage/HomePage';
 import { EarnDeposit } from './components/Page/Earn/EarnDeposit/EarnDeposit';
 import { EarnWithdrawal } from './components/Page/Earn/EarnWithdrawal/EarnWithdrawal';
+import { ThemeBlackState, ThemeWhiteState, useToggleTheme } from './hooks/useToggleTheme';
+import { useEffect } from 'react'
 
 
 const AppPage = styled.div`
@@ -18,23 +20,34 @@ const AppPage = styled.div`
 `
 
 function App() {
-  return (
-    <>
-    <AppPage>
-      <Header/>
-      <Routes>
-        <Route path="/deposit" element={<EarnDeposit/>}/>
-        <Route path="/withdrawal" element={<EarnWithdrawal/>}/>
-        <Route path="/" element={<HomePage/>}/>
-        <Route path="/homepage" element={<HomePage/>}/>
-        <Route path="/my" element={<MyPage/>}/>
-        <Route path="/borrow" element={<Borrow/>}/>
-        <Route path="/earn" element={<Earn/>}/>
-        <Route path="/liquidation" element={<Liquidation/>}/>
-      </Routes>
-    </AppPage>
-    </>
-  );
+
+	const [theme, setTheme] = useToggleTheme();
+
+	useEffect(() => {
+		if (localStorage.getItem('Theme') != "") {
+			setTheme(localStorage.getItem('Theme') == 'white' ? ThemeWhiteState : ThemeBlackState)
+		} else {
+			setTheme(ThemeWhiteState)
+		}
+	}, [])
+
+	return (
+		<>
+			<AppPage>
+				<Header />
+				<Routes>
+					<Route path="/deposit" element={<EarnDeposit />} />
+					<Route path="/withdrawal" element={<EarnWithdrawal />} />
+					<Route path="/" element={<HomePage />} />
+					<Route path="/homepage" element={<HomePage />} />
+					<Route path="/my" element={<MyPage />} />
+					<Route path="/borrow" element={<Borrow />} />
+					<Route path="/earn" element={<Earn />} />
+					<Route path="/liquidation" element={<Liquidation />} />
+				</Routes>
+			</AppPage>
+		</>
+	);
 }
 
 export default App;

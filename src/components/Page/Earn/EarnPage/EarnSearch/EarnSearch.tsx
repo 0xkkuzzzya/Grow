@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useToggleTheme } from "../../../../../hooks/useToggleTheme";
 
 const SearchBlock = styled.div`
     width: 100%;
@@ -8,11 +9,11 @@ const SearchBlock = styled.div`
     margin-top: 15px;
 `
 
-const SearchInput = styled.input`
+const SearchInput = styled.input <{searchBg: string, searchBorder: string}>`
     width: 100%;
     height: 100%;
-    background: #FAFAFA;
-    border: 1px solid #e5e5e5;
+    background: ${props => props.searchBg};
+    border: ${props => props.searchBorder};
     color: #888;
     font-size: 17px;
     font-weight: 700;
@@ -22,9 +23,12 @@ const SearchInput = styled.input`
 `
 
 export const EarnSerach = () => {
+
+    const [theme, setTheme] = useToggleTheme()
+
     return(
         <SearchBlock>
-            <SearchInput placeholder="Search"></SearchInput>
+            <SearchInput searchBg={theme.searchBg} searchBorder={theme.searchBorder} placeholder="Search"></SearchInput>
         </SearchBlock>
     )
 }

@@ -1,9 +1,18 @@
 import styled from "styled-components";
 import USQBalance from '../../../assets/svg/USQLogo.svg'
 import { MyPageHeader } from "./MyPageHeader/MyPageHeader";
+import { useToggleTheme } from "../../../hooks/useToggleTheme";
 
 const MyPageBlock = styled.div`
     width: 100%;
+`
+
+
+const Block = styled.div <{backgroundColor: string}>`
+    width: 100%;
+    height: 93.3vh;
+    background: ${props => props.backgroundColor};
+    margin-top: -5px;
 `
 
 const MyPageContainer = styled.div`
@@ -15,17 +24,19 @@ const MyPageContainer = styled.div`
     }
 `
 
-const HeaderBlock = styled.div`
+const HeaderBlock = styled.div <{TextColor: string}>`
     width: 100%;
+    color: ${props => props.TextColor};
 `
 
 const BalanceBlock = styled.div`
     width: 100%;
 `
 
-const BalanceText = styled.h1`
+const BalanceText = styled.h1 <{TextColor: string}>`
     margin-top: 20px;
     margin-bottom: 30px;
+    color: ${props => props.TextColor};
     font-size: 65px;
     display: flex;
     align-items: center;
@@ -42,9 +53,21 @@ const BalanceImg = styled.img`
 
 const DynamicBlock = styled.div`
     width: 100%;
-    height: 13px;
-    background: linear-gradient(to right, rgba(87, 187, 242, 1), rgba(10, 152, 252, 1));
+    height: 10px;
     border-radius: 20px;
+    background: linear-gradient(to right, rgba(87, 187, 242, 1), rgba(10, 152, 252, 1));
+    animation: anim 500s linear infinite;
+    @keyframes anim {
+        0% {
+            background: rgba(87, 187, 242, 1)
+        }
+        50%{
+            background: rgba(10, 152, 252, 1)
+        }
+        0%{
+            background: rgba(87, 187, 242, 1)
+        }
+    }
 `
 
 const ContainerBlock = styled.div`
@@ -54,21 +77,26 @@ const ContainerBlock = styled.div`
 
 
 export const MyPage = () => {
-    return(
+
+    const [theme, setTheme] = useToggleTheme()
+
+    return (
+        <Block backgroundColor={theme.backgroundColor}>
         <MyPageBlock>
             <MyPageContainer>
-                <HeaderBlock>
-                    <h1 style={{fontSize: "30px", fontWeight: "600"}}>My Page</h1>
+                <HeaderBlock TextColor={theme.TextColor}>
+                    <h1 style={{ fontSize: "30px", fontWeight: "600" }}>My Page</h1>
                 </HeaderBlock>
                 <BalanceBlock>
-                    <BalanceText>1000<BalanceImg src={USQBalance}></BalanceImg>
-                </BalanceText>
+                    <BalanceText TextColor={theme.TextColor}>1000<BalanceImg src={USQBalance}></BalanceImg>
+                    </BalanceText>
                 </BalanceBlock>
-                <DynamicBlock/>
+                <DynamicBlock />
                 <ContainerBlock>
                     <MyPageHeader></MyPageHeader>
                 </ContainerBlock>
             </MyPageContainer>
         </MyPageBlock>
+        </Block>
     )
 }

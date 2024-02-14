@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Link, useMatch } from "react-router-dom";
 import { ReactNode } from "react";
+import { useToggleTheme } from "../../../hooks/useToggleTheme";
 
 const LinkText = (Link)
 const LinkBLock = styled(LinkText)`
@@ -25,13 +26,15 @@ interface Props {
 
 export const Castomlink = ({children, to}: Props) => {
 
+    const [theme, setTheme] = useToggleTheme()
+
     const match = useMatch(to)
 
     return(
         <LinkBLock 
         to={to}
         style={{
-            color: match ? '#333' : "#C0C0C0",
+            color: match ? theme.active == true ? '#C0C0C0' : '#333' :  theme.active == true ? '#666' : '#C0C0C0',
             transition: '.2s ease-in-out',
             width: '100%'
         }}

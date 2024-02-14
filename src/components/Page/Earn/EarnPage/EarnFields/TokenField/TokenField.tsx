@@ -3,14 +3,15 @@ import { EarnUSQToken } from "./Tokens/Tokens";
 import { USQAPR } from "./APR/ARP";
 import { useAccordionEarn } from '../../../../../../hooks/useAccordionEarn';
 import { EarnCastomLink } from "../../../EarnCastomLink/EarnCastomLink";
+import { useToggleTheme } from "../../../../../../hooks/useToggleTheme";
 
 
-const AccordionBlock = styled.div <{height: string}>`
+const AccordionBlock = styled.div <{height: string, BorderField: string}>`
     width: 100%;
     max-height: ${props => props.height};
     display: flex;
     flex-direction: column;
-    border: 2px solid #eee;
+    border: ${props => props.BorderField};
     border-radius: 15px;
     transition: max-height .3s ease-in-out;
     overflow: hidden;
@@ -71,6 +72,7 @@ const EarnWithdrawalButton = styled.button`
 export const USQField = () => {
 
     const [eAccordion, setEAccordion] = useAccordionEarn();
+    const [theme, setTheme] = useToggleTheme()
 
     function openAccordion () {
         if(eAccordion.active == false) {
@@ -87,7 +89,7 @@ export const USQField = () => {
     }
 
     return(
-        <AccordionBlock height={eAccordion.height} onClick={openAccordion}>
+        <AccordionBlock BorderField={theme.BorderField} height={eAccordion.height} onClick={openAccordion}>
             <TokenFieldBlock>
                 <EarnUSQToken/>
                 <USQAPR/>

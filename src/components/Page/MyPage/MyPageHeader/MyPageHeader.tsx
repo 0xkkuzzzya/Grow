@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { MyPageBalance } from "../MyPageBalance/MyPageBalance";
 import { MyPageDeposit } from "../MyPageDeposit/MyPageDeposit";
 import { MyPageBorrow } from "../MyPageBorrow/MyPageBorrow";
+import { useToggleTheme } from "../../../../hooks/useToggleTheme";
 
 const HeaderBlock = styled.div`
     width: 100%;
@@ -17,7 +18,7 @@ const ButtonBlock = styled.div`
     }
 `
 
-const ButtonLink = styled.button`
+const ButtonLink = styled.button <{TextColor: string}>`
     max-width: 100%;
     background: transparent;
     border: none;
@@ -27,6 +28,7 @@ const ButtonLink = styled.button`
     outline: none;
     font-family: 'Inter', sans-serif;
     margin-left: 20px;
+    color: ${props => props.TextColor};
     @media (max-width: 500px) {
         font-size: 25px;
     }
@@ -47,6 +49,7 @@ const DynamicUndeBlock = styled.div`
 export const MyPageHeader = () => {
 
     const [block, setBlock] = useState('Balance')
+    const [theme, setTheme] = useToggleTheme()
 
     const greyText: string = "rgba(192, 192, 192, 1)"
     const underline: string = "underline 2px solid rgba(87, 187, 242, 1)"
@@ -54,22 +57,22 @@ export const MyPageHeader = () => {
     return(
         <HeaderBlock>
             <ButtonBlock>
-                <ButtonLink 
+                <ButtonLink TextColor={theme.TextColor}
                 onClick={() => {setBlock('Balance')}}
                 style={{marginLeft: "0",
-                    color: block == 'Balance' ? 'black' : greyText,
+                    color: block == 'Balance' ? theme.TextColor = theme.active == true ? 'white' : 'black' : greyText,
                     textDecoration: block == 'Balance' ? underline : ''
                 }}>Balance</ButtonLink>
-                <ButtonLink 
+                <ButtonLink TextColor={theme.TextColor}
                 onClick={() => {setBlock('Deposit')}} 
                 style={{
-                    color: block == 'Deposit' ? 'black' : greyText,
+                    color: block == 'Deposit' ? theme.TextColor = theme.active == true ? 'white' : 'black' : greyText,
                     textDecoration: block == 'Deposit' ? underline : ''
                 }}>Deposit</ButtonLink>
-                <ButtonLink 
+                <ButtonLink TextColor={theme.TextColor}
                 onClick={() => {setBlock('Borrow')}} 
                 style={{
-                    color: block == 'Borrow' ? 'black' : greyText,
+                    color: block == 'Borrow' ? theme.TextColor = theme.active == true ? 'white' : 'black' : greyText,
                     textDecoration: block == 'Borrow' ? underline : ''
                 }}>Borrow</ButtonLink>
             </ButtonBlock>

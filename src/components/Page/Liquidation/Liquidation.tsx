@@ -1,10 +1,18 @@
 import styled from "styled-components";
+import { useToggleTheme } from "../../../hooks/useToggleTheme";
 
 const LiquidationBLock = styled.div`
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+`
+
+const Block = styled.div <{backgroundColor: string}>`
+    width: 100%;
+    height: 93.3vh;
+    background: ${props => props.backgroundColor};
+    margin-top: -5px;
 `
 
 const TestText = styled.h1`
@@ -20,9 +28,14 @@ const TestText = styled.h1`
 `
 
 export const Liquidation = () => {
+
+    const [theme, setTheme] = useToggleTheme()
+
     return(
+        <Block backgroundColor={theme.backgroundColor}>
         <LiquidationBLock>
             <TestText>Soon</TestText>
         </LiquidationBLock>
+        </Block>
     )
 }

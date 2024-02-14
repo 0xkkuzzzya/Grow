@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import USQLogo from '../../../../../../../assets/svg/USQLogo.svg'
+import { useToggleTheme } from "../../../../../../../hooks/useToggleTheme";
 const TokensBlock = styled.div`
     max-width: 100%;
     height: 100%;
@@ -14,19 +15,10 @@ const TokensImg = styled.img`
     border-radius: 50px;
 `
 
-const TokensName = styled.h1`
+const TokensName = styled.h1 <{TextColor: string}>`
     font-size: 20px;
     margin-left: 5px;
-`
-
-const TokensProto = styled.div`
-    max-width: 100%;
-    border: 1px solid #EEEEEE;
-    margin-left: 10px;
-    padding: 3px 11px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
+    color: ${props => props.TextColor};
 `
 
 const TokensProtoText = styled.a`
@@ -47,10 +39,13 @@ const USQProto = styled.div`
 
 
 export const EarnUSQToken = () => {
+
+    const [theme, setTheme] = useToggleTheme()
+
     return(
         <TokensBlock>
             <TokensImg src={USQLogo}></TokensImg>
-            <TokensName>USQ</TokensName>
+            <TokensName TextColor={theme.TextColor}>USQ</TokensName>
             <USQProto>
                 <TokensProtoText>Grow</TokensProtoText>
             </USQProto>

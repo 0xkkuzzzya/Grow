@@ -1,14 +1,15 @@
 import styled from "styled-components";
 import { EarnDepositInput } from "./DepositInput/EarnDepositInput";
 import { EarnDepositToken } from "./DepositToken/EarnDepositToken";
+import { useToggleTheme } from "../../../../../hooks/useToggleTheme";
 
 const FieldBlock = styled.div`
     width: 100%;
 `
 
-const TokenBlock = styled.div`
+const TokenBlock = styled.div <{BorderField: string}>`
     height: 100%;
-    border: 2px solid #eee;
+    border: ${props => props.BorderField};
     border-radius: 20px;
     display: flex;
     align-items: center;
@@ -40,10 +41,13 @@ const AmountButton = styled.button`
 
 
 export const EarnDepositTokenField = () => {
+
+    const [theme, setTheme] = useToggleTheme()
+
     return(
         <FieldBlock>
             <TokenText>I want to deposit</TokenText>
-            <TokenBlock>
+            <TokenBlock BorderField={theme.BorderField}>
                 <EarnDepositToken/>
                 <EarnDepositInput/>
                 <AmountButton>MAX</AmountButton>
