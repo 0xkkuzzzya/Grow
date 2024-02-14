@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Castomlink } from "../CastomLink/CastomLink";
 import { useAccordionStore } from "../../../hooks/useAccordionStore";
+import { useToggleTheme } from "../../../hooks/useToggleTheme";
 
 
 const BlockLink = styled.nav`
@@ -14,11 +15,11 @@ const BlockLink = styled.nav`
     margin-left: 145px;
 `
 
-const NavBlock = styled.div <{padding: string}>`
+const NavBlock = styled.div <{padding: string, navBlockBg: string}>`
     width: 100%;
     display: flex;
     justify-content: center;
-    background: #ECEBEB;
+    background: ${props => props.navBlockBg};
     padding-bottom: ${props => props.padding};
     transition: padding-bottom .3s ease-in-out;
 `
@@ -30,8 +31,8 @@ const LinkBlock = styled.div`
     }
 `
 
-const MobLinkBlock = styled.div`
-    background-color: rgb(245,245,245);
+const MobLinkBlock = styled.div <{modalBgColor: string}>`
+    background-color: ${props => props.modalBgColor};
     margin: 0px 20px;
     display: flex;
     outline: none;
@@ -84,21 +85,22 @@ export const DefoultLinkBlock = () => {
 export const MobileLinkBlock = () => {
 
     const [accordion, setAccordion] = useAccordionStore()
+    const [theme, setTheme] = useToggleTheme()
 
     return(
         <LinkMobBlock>
-           <NavBlock padding={accordion.active == true ? '20px' : '0px'}>
+           <NavBlock navBlockBg={theme.navBlockBg} padding={accordion.active == true ? '20px' : '0px'}>
                 <MobBlockLink height={accordion.height}>
-                    <MobLinkBlock>
+                    <MobLinkBlock modalBgColor={theme.modalBgColor}>
                         <Castomlink to="/my">My</Castomlink>
                     </MobLinkBlock>
-                    <MobLinkBlock>
+                    <MobLinkBlock modalBgColor={theme.modalBgColor}>
                         <Castomlink to="/borrow">Borrow</Castomlink>
                     </MobLinkBlock>
-                    <MobLinkBlock>
+                    <MobLinkBlock modalBgColor={theme.modalBgColor}>
                         <Castomlink to="/earn">Earn</Castomlink>
                     </MobLinkBlock>
-                    <MobLinkBlock>
+                    <MobLinkBlock modalBgColor={theme.modalBgColor}>
                         <Castomlink to="/liquidation">Liquidation</Castomlink>
                     </MobLinkBlock>
                 </MobBlockLink>

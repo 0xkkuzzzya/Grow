@@ -17,6 +17,7 @@ interface Theme {
   connectModalContainer: string;
   walletBg: string;
   walletHover: string;
+  navBlockBg: string;
 }
 
 export const ThemeWhiteState: Theme = { 
@@ -35,7 +36,8 @@ export const ThemeWhiteState: Theme = {
     inputTextColor: '#333',
     connectModalContainer: '#F5F5F5',
     walletBg: '#D9D9D9',
-    walletHover: '#ECECEC'
+    walletHover: '#ECECEC',
+    navBlockBg: '#ECEBEB',
 };
 
 export const ThemeBlackState: Theme = { 
@@ -54,7 +56,8 @@ export const ThemeBlackState: Theme = {
   inputTextColor: '#999',
   connectModalContainer: '#323232',
   walletBg: '#5F5F5F',
-  walletHover: '#333333'
+  walletHover: '#333333',
+  navBlockBg: '#111',
 };
 
 
