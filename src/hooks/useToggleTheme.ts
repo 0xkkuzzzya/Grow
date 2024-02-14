@@ -49,7 +49,7 @@ export const ThemeBlackState: Theme = {
   homePageGreyText: '#aaa',
   FieldColor: '#1a1a1a',
   BorderField: '2px solid #3A3A3A',
-  modalBgColor: '#232323',
+  modalBgColor: '#282828',
   modalBorder: '2px solid #333',
   searchBg: '#222',
   searchBorder: '1px solid #444',
@@ -57,7 +57,7 @@ export const ThemeBlackState: Theme = {
   connectModalContainer: '#323232',
   walletBg: '#5F5F5F',
   walletHover: '#333333',
-  navBlockBg: '#111',
+  navBlockBg: '#202020',
 };
 
 

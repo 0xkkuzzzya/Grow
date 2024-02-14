@@ -57,7 +57,7 @@ export const Header = () => {
             <MainHeader headerColor={theme.headerColor}>
                 <HeaderLogoBlock>
                     <Castomlink to="/">
-                        <HeaderLogoQUBE src={QubeLogo}></HeaderLogoQUBE>
+                        <HeaderLogoQUBE style={{marginTop: "-5px"}} src={QubeLogo}></HeaderLogoQUBE>
                     </Castomlink>
                 </HeaderLogoBlock>
                 <LinkButton></LinkButton>

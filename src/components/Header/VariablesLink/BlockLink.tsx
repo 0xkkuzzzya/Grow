@@ -19,12 +19,14 @@ const NavBlock = styled.div <{padding: string, navBlockBg: string}>`
     width: 100%;
     display: flex;
     justify-content: center;
+    flex-direction: column;
     background: ${props => props.navBlockBg};
     padding-bottom: ${props => props.padding};
     transition: padding-bottom .3s ease-in-out;
 `
 
 const LinkBlock = styled.div`
+    margin-top: -5px;
     @media (min-width: 730px){
         flex-grow: 0;
         display: flex;
@@ -34,6 +36,7 @@ const LinkBlock = styled.div`
 const MobLinkBlock = styled.div <{modalBgColor: string}>`
     background-color: ${props => props.modalBgColor};
     margin: 0px 20px;
+    margin-left: 22px;
     display: flex;
     outline: none;
     border-radius: 10px;
@@ -89,9 +92,9 @@ export const MobileLinkBlock = () => {
 
     return(
         <LinkMobBlock>
-           <NavBlock navBlockBg={theme.navBlockBg} padding={accordion.active == true ? '10px' : '0px'}>
-                <MobBlockLink height={accordion.height}>
-                    <MobLinkBlock modalBgColor={theme.modalBgColor}>
+           <NavBlock navBlockBg={theme.navBlockBg} padding={accordion.active == true ? '20px' : '0px'}>
+                <MobBlockLink  height={accordion.height}>
+                    <MobLinkBlock style={{marginTop: "-5px"}} modalBgColor={theme.modalBgColor}>
                         <Castomlink to="/my">My</Castomlink>
                     </MobLinkBlock>
                     <MobLinkBlock modalBgColor={theme.modalBgColor}>
@@ -105,6 +108,7 @@ export const MobileLinkBlock = () => {
                     </MobLinkBlock>
                 </MobBlockLink>
             </NavBlock>
+            
         </LinkMobBlock>
     )
 }

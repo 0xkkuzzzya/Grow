@@ -5,11 +5,15 @@ import Sun from '../../../assets/svg/Sun.svg'
 
 const SwapButton = styled.button`
     width: 35px;
-    margin-right: 35px;
+    margin-right: 55px;
     background-color: transparent;
     border: none;
     padding: 0;
     outline: none;
+    margin-top: -5px;
+    @media (max-width: 950px) {
+        margin-right: 20px;
+    }
 `
 
 const ThemeIcon = styled.svg <{icon: string}>`

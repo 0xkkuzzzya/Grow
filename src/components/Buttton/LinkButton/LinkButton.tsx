@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import Accordionlogo from "../../../assets/svg/AccordionLogo.svg"
+import AccordionlogoBlack from '../../../assets/svg/AccordionLogoBlack.svg'
 import { useAccordionStore } from "../../../hooks/useAccordionStore";
+import { useToggleTheme } from "../../../hooks/useToggleTheme";
 
 const LinkMobButton = styled.button`
     background: transparent;
@@ -8,16 +10,16 @@ const LinkMobButton = styled.button`
     cursor: pointer;
     padding: 0;
     margin-left: 30px;
-    margin-top: 5px;
     outline: none;
     margin-right: 20px;
     
 `
 
-const AccrordionImg = styled.img`
+const AccrordionImg = styled.svg <{icon: string}>`
     width: 25px;
     height: 25px;
     margin-left: auto;
+    background: url(${props => props.icon});
 `
 
 const ButtonBlock = styled.div`
@@ -32,6 +34,7 @@ const ButtonBlock = styled.div`
 export const LinkButton = () => {
 
     const [accordion, setAccordion] = useAccordionStore()
+    const [theme, setTheme] = useToggleTheme();
 
     function openLinkBlock () {
         if(accordion.active == false) {
@@ -52,7 +55,7 @@ export const LinkButton = () => {
     return(
         <ButtonBlock>
             <LinkMobButton onClick={openLinkBlock}>
-                <AccrordionImg src={Accordionlogo}></AccrordionImg>
+                <AccrordionImg icon={theme.active == true ? AccordionlogoBlack : Accordionlogo}></AccrordionImg>
             </LinkMobButton>
         </ButtonBlock>
     )

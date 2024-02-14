@@ -173,7 +173,7 @@ export const ConnectModal = () => {
         <OpenButton onClick={wallet.init == false? open : disconnect} 
         color={connectWallet.connected == true ? 'transparent' : BackgroundConnectButton} 
         border={connectWallet.connected == true ? '2px solid #6CBBFF' : 'none' }
-        margin={connectWallet.connected == true ? '-5px' : '0px' }>
+        margin={connectWallet.connected == true ? '-5px' : '-4px' }>
             {walletAddr == "" || undefined ? "Connect Wallet" : <ConnectBlock TextColor={theme.TextColor}>  <LogoKeplr src={KeplrLogo}/>  {walletAddr} </ConnectBlock>}
         </OpenButton>
         <StyledDialogOvelay isOpen={walletModalStatus.b && !connectWallet.connected} onDismiss={close}>
