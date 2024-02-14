@@ -28,6 +28,7 @@ const ButtonLink = styled.button <{TextColor: string}>`
     outline: none;
     font-family: 'Inter', sans-serif;
     margin-left: 20px;
+    transition: all .3s ease-in-out;
     color: ${props => props.TextColor};
     @media (max-width: 500px) {
         font-size: 25px;

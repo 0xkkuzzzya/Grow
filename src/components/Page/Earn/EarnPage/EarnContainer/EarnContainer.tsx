@@ -30,9 +30,9 @@ export const EarnContainer = () => {
             <EarnHeader/>
             <EarnSerach/>
             <EarnFields/>
-            <ContainerBlockH TextColor={theme.TextColor}>
+            {/* <ContainerBlockH TextColor={theme.TextColor}>
                 <h1 style={{fontSize: "27px"}}>No vaults</h1>
-            </ContainerBlockH>
+            </ContainerBlockH> */}
         </ContainerBlock>
     )
 }
