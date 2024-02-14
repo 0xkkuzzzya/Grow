@@ -89,7 +89,7 @@ export const MobileLinkBlock = () => {
 
     return(
         <LinkMobBlock>
-           <NavBlock navBlockBg={theme.navBlockBg} padding={accordion.active == true ? '15px' : '0px'}>
+           <NavBlock navBlockBg={theme.navBlockBg} padding={accordion.active == true ? '10px' : '0px'}>
                 <MobBlockLink height={accordion.height}>
                     <MobLinkBlock modalBgColor={theme.modalBgColor}>
                         <Castomlink to="/my">My</Castomlink>
