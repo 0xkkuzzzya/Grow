@@ -10,7 +10,7 @@ const LiquidationBLock = styled.div`
 
 const Block = styled.div <{backgroundColor: string}>`
     width: 100%;
-    height: calc(100vh - 70px);
+    height: calc(100vh - 65px);
     background: ${props => props.backgroundColor};
 `
 
