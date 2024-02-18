@@ -10,7 +10,7 @@ const MyPageBlock = styled.div`
 
 const Block = styled.div <{backgroundColor: string}>`
     width: 100%;
-    height: 93.3vh;
+    height: calc(100vh - 70px);
     background: ${props => props.backgroundColor};
     margin-top: -5px;
 `
