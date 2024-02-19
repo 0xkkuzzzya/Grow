@@ -45,10 +45,10 @@ export const Header = () => {
     const [theme, setTheme] = useToggleTheme()
 
     const isDes = useMediaQuery({
-        query: "(min-device-width: 950px)",
+        query: "(min-device-width: 1110px)",
     });
     const isMob = useMediaQuery({
-        query: "(max-device-width: 950px)",
+        query: "(max-device-width: 1110px)",
     });
 
     return(
