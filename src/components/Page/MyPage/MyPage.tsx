@@ -8,7 +8,7 @@ const MyPageBlock = styled.div`
 `
 
 
-const Block = styled.div <{backgroundColor: string}>`
+const Block = styled.div <{ backgroundColor: string }>`
     width: 100%;
     height: calc(100vh - 65px);
     background: ${props => props.backgroundColor};
@@ -24,7 +24,7 @@ const MyPageContainer = styled.div`
     }
 `
 
-const HeaderBlock = styled.div <{TextColor: string}>`
+const HeaderBlock = styled.div <{ TextColor: string }>`
     width: 100%;
     color: ${props => props.TextColor};
 `
@@ -33,7 +33,7 @@ const BalanceBlock = styled.div`
     width: 100%;
 `
 
-const BalanceText = styled.h1 <{TextColor: string}>`
+const BalanceText = styled.h1 <{ TextColor: string }>`
     margin-top: 20px;
     margin-bottom: 30px;
     color: ${props => props.TextColor};
@@ -55,21 +55,24 @@ const DynamicBlock = styled.div`
     width: 100%;
     height: 10px;
     border-radius: 20px;
-    background: linear-gradient(to right, rgba(87, 187, 242, 1), rgba(10, 152, 252, 1));
-    animation: anim 500s linear infinite;
+    position: relative;
+    background: repeating-linear-gradient(to right, rgb(119, 191, 249), rgb(45, 150, 255));
+    background-size: 400% 400%;
+    -webkit-background-size: 50% 100%;
+    -webkit-animation-name: anim;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
     @keyframes anim {
         0% {
-            background: rgba(87, 187, 242, 1)
+		    background-position: left bottom;
         }
-        50%{
-            background: rgba(10, 152, 252, 1)
-        }
-        0%{
-            background: rgba(87, 187, 242, 1)
+        100% {
+            background-position: right bottom;
         }
     }
 `
-
+// rgb(119, 191, 249), rgb(45, 150, 255)
 const ContainerBlock = styled.div`
     
 `
@@ -82,21 +85,21 @@ export const MyPage = () => {
 
     return (
         <Block backgroundColor={theme.backgroundColor}>
-        <MyPageBlock>
-            <MyPageContainer>
-                <HeaderBlock TextColor={theme.TextColor}>
-                    <h1 style={{ fontSize: "30px", fontWeight: "600" }}>My Page</h1>
-                </HeaderBlock>
-                <BalanceBlock>
-                    <BalanceText TextColor={theme.TextColor}>1000<BalanceImg src={USQBalance}></BalanceImg>
-                    </BalanceText>
-                </BalanceBlock>
-                <DynamicBlock />
-                <ContainerBlock>
-                    <MyPageHeader></MyPageHeader>
-                </ContainerBlock>
-            </MyPageContainer>
-        </MyPageBlock>
+            <MyPageBlock>
+                <MyPageContainer>
+                    <HeaderBlock TextColor={theme.TextColor}>
+                        <h1 style={{ fontSize: "30px", fontWeight: "600" }}>My Page</h1>
+                    </HeaderBlock>
+                    <BalanceBlock>
+                        <BalanceText TextColor={theme.TextColor}>1000<BalanceImg src={USQBalance}></BalanceImg>
+                        </BalanceText>
+                    </BalanceBlock>
+                    <DynamicBlock />
+                    <ContainerBlock>
+                        <MyPageHeader></MyPageHeader>
+                    </ContainerBlock>
+                </MyPageContainer>
+            </MyPageBlock>
         </Block>
     )
 }
