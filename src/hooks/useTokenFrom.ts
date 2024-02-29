@@ -1,5 +1,5 @@
 import { createStore } from './store';
-import AtomLogo from "../assets/svg/AtomLogo.svg"
+import AtomLogo from "../assets/svg/AtomLogo.webp"
 
 export interface Token {
         logo: string;

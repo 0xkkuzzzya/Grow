@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import QubeLogo from '../../assets/svg/QubeLogo.svg'
+import QubeLogo from '../../assets/svg/QubeLogo.webp'
 import { Castomlink } from "./CastomLink/CastomLink";
 import { ConnectButton } from "../Buttton/ConnectButton/CoonectButton";
 import { DefoultLinkBlock, MobileLinkBlock } from "./VariablesLink/BlockLink";

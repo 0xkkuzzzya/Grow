@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import USQLogo from '../../../../../assets/svg/USQLogo.svg'
-import ATOMLogo from '../../../../../assets/svg/AtomLogo.svg'
-import WBTCLogo from '../../../../../assets/svg/WBTCLogo.svg'
-import GUSQLogo from '../../../../../assets/svg/GUSQLogo.svg'
+import USQLogo from '../../../../../assets/svg/USQLogo.webp'
+import ATOMLogo from '../../../../../assets/svg/AtomLogo.webp'
+import WBTCLogo from '../../../../../assets/svg/WBTCLogo.webp'
+import GUSQLogo from '../../../../../assets/svg/GUSQLogo.webp'
 import { useToggleTheme } from "../../../../../hooks/useToggleTheme";
 
 const FieldArrS = styled.div`

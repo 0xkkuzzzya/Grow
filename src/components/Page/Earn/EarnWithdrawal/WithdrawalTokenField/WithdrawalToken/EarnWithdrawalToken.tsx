@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import USQLogo from '../../../../../../assets/svg/USQLogo.svg'
+import USQLogo from '../../../../../../assets/svg/USQLogo.webp'
 
 const TokenBlock = styled.div`
     max-width: 30%;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { EarnCastomLink } from "../../EarnCastomLink/EarnCastomLink";
-import ArrowEarn from '../../../../../assets/svg/ArrowEarn.svg'
+import ArrowEarn from '../../../../../assets/svg/ArrowEarn.webp'
 import { useToggleTheme } from "../../../../../hooks/useToggleTheme";
 
 const HeaderBlock = styled.div`

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { ThemeBlackState, ThemeWhiteState, useToggleTheme } from "../../../hooks/useToggleTheme";
-import Moon from '../../../assets/svg/Moon.svg'
-import Sun from '../../../assets/svg/Sun.svg'
+import Moon from '../../../assets/svg/Moon.webp'
+import Sun from '../../../assets/svg/Sun.webp'
 
 const SwapButton = styled.button`
     width: 35px;

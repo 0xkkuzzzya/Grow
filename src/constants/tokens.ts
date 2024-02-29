@@ -1,5 +1,5 @@
-import USQLogo from "../assets/svg/USQLogo.svg";
-import ATOMLogo from "../assets/svg/AtomLogo.svg";
+import USQLogo from "../assets/svg/USQLogo.webp";
+import ATOMLogo from "../assets/svg/AtomLogo.webp";
 
 export enum TokenType {
         qAsset,

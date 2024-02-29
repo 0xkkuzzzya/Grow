@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import USQBalance from '../../../assets/svg/USQLogo.svg'
+import USQBalance from '../../../assets/svg/USQLogo.webp'
 import { MyPageHeader } from "./MyPageHeader/MyPageHeader";
 import { useToggleTheme } from "../../../hooks/useToggleTheme";
 
@@ -55,22 +55,7 @@ const DynamicBlock = styled.div`
     width: 100%;
     height: 10px;
     border-radius: 20px;
-    position: relative;
     background: repeating-linear-gradient(to right, rgb(119, 191, 249), rgb(45, 150, 255));
-    background-size: 400% 400%;
-    -webkit-background-size: 50% 100%;
-    -webkit-animation-name: anim;
-    -webkit-animation-duration: 1s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-timing-function: linear;
-    @keyframes anim {
-        0% {
-		    background-position: left bottom;
-        }
-        100% {
-            background-position: right bottom;
-        }
-    }
 `
 // rgb(119, 191, 249), rgb(45, 150, 255)
 const ContainerBlock = styled.div`

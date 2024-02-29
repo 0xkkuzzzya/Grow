@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import Accordionlogo from "../../../assets/svg/AccordionLogo.svg"
-import AccordionlogoBlack from '../../../assets/svg/AccordionLogoBlack.svg'
+import Accordionlogo from "../../../assets/svg/AccordionLogo.webp"
+import AccordionlogoBlack from '../../../assets/svg/AccordionLogoBlack.webp'
 import { useAccordionStore } from "../../../hooks/useAccordionStore";
 import { useToggleTheme } from "../../../hooks/useToggleTheme";
 

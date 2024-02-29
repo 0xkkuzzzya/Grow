@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import USQLogo from '../../../../../../../assets/svg/USQLogo.svg'
+import USQLogo from '../../../../../../../assets/svg/USQLogo.webp'
 import { useToggleTheme } from "../../../../../../../hooks/useToggleTheme";
 const TokensBlock = styled.div`
     max-width: 100%;

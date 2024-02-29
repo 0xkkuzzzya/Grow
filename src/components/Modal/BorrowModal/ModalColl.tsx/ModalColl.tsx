@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { DialogContent, DialogOverlay } from '@reach/dialog';
 import { animated } from '@react-spring/web';
-import QubeLogo from '../../../../assets/svg/QubeLogo.svg'
-import ArrowBlack from '../../../../assets/svg/ArrowBlack.svg'
-import ArrowWhite from '../../../../assets/svg/ArrowWhite.svg'
+import QubeLogo from '../../../../assets/svg/QubeLogo.webp'
+import ArrowBlack from '../../../../assets/svg/ArrowBlack.webp'
+import ArrowWhite from '../../../../assets/svg/ArrowWhite.webp'
 import { useShowModalTo } from "../../../../hooks/useShowModal";
 import { useToggleTheme } from "../../../../hooks/useToggleTheme";
 
